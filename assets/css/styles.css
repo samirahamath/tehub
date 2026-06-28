@@ -1279,6 +1279,21 @@ p:last-child { margin-bottom: 0; }
 .footer-bottom .footer-meta-links { display: flex; gap: var(--space-5); }
 .footer-bottom a:hover { color: var(--lime); }
 
+/* ---------- Global Mouse Tracking Glow --------------------------------- */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(600px circle at var(--global-mouse-x, 50vw) var(--global-mouse-y, 50vh), rgba(212, 255, 61, 0.05), transparent 40%);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+body:hover::after {
+  opacity: 1;
+}
+
 /* ---------- 26. Misc helpers ------------------------------------------- */
 .divider { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .hidden  { display: none; }

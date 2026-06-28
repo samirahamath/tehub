@@ -80,4 +80,9 @@
       });
     });
   }
+  // Global interactive glow tracking
+  document.addEventListener('mousemove', function (e) {
+    document.documentElement.style.setProperty('--global-mouse-x', e.clientX + 'px');
+    document.documentElement.style.setProperty('--global-mouse-y', e.clientY + 'px');
+  });
 })();
