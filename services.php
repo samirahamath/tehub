@@ -1,19 +1,18 @@
 <?php
-$db_host = 'localhost';
-$db_name = 'shacartc_expert';
-$db_user = 'shacartc_expert';
-$db_pass = 'shacartc_expert';
+require_once 'db.php';
 
 $services = [];
-try {
-    $pdo = new PDO("mysql:host={$db_host};dbname={$db_name};charset=utf8mb4", $db_user, $db_pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+if ($pdo) {
+    try {
+        $stmt = $pdo->query("SELECT * FROM services WHERE status='active' ORDER BY id ASC");
+        $services = $stmt->fetchAll();
+    } catch (Exception $e) {
+        $services = [];
+    }
+}
 
-    $stmt = $pdo->query("SELECT * FROM services WHERE status='active' ORDER BY id ASC");
-    $services = $stmt->fetchAll();
-} catch (Exception $e) {
-    // Fallback static data if DB connection is offline
+if (empty($services)) {
+    // Fallback static data if DB connection is offline or empty
     $services = [
         [
             'id' => 1,
@@ -76,7 +75,12 @@ try {
           <a href="contact.html">Contact</a>
         </div>
         <div class="nav-cta-row">
-          <a href="/client_login.php" class="btn btn--ghost btn--sm">Client Portal</a>
+          <?php if(!empty($_SESSION['client_user'])): ?>
+            <a href="client_dashboard.php" class="btn btn--ghost btn--sm">Client Dashboard</a>
+          <?php else: ?>
+            <a href="client_login.php" class="btn btn--ghost btn--sm">Client Portal</a>
+          <?php endif; ?>
+          <a href="admin_login.php" class="btn btn--ghost btn--sm" style="opacity:0.8;">Admin</a>
           <a href="contact.html" class="btn btn--primary btn--sm">Start a project
             <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
               <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
@@ -95,7 +99,8 @@ try {
     <a href="index.html">Index</a>
     <a href="work.html">Work</a>
     <a href="services.php">Services</a>
-    <a href="/client_login.php">Client Portal</a>
+    <a href="client_login.php">Client Portal</a>
+    <a href="admin_login.php">Admin Login</a>
     <a href="contact.html">Contact</a>
   </div>
 
@@ -183,7 +188,7 @@ try {
                   endforeach; 
                 ?>
               </ul>
-              <a class="btn <?= $btn_class ?>" href="/client_dashboard.php">Order <?= htmlspecialchars($s['title']) ?></a>
+              <a class="btn <?= $btn_class ?>" href="checkout.php?service_id=<?= $s['id'] ?>">Order <?= htmlspecialchars($s['title']) ?></a>
             </article>
           <?php endforeach; ?>
         </div>
