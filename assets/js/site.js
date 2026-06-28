@@ -66,4 +66,18 @@
       last = y;
     }, { passive: true });
   }
+
+  // Interactive glow cards mouse position tracking
+  const glowCards = document.querySelectorAll('.service-glow-card');
+  if (glowCards.length) {
+    glowCards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', x + 'px');
+        card.style.setProperty('--mouse-y', y + 'px');
+      });
+    });
+  }
 })();
