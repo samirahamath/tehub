@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #0A0A0C; }
+      .border { fill: none; stroke: rgba(244, 244, 240, 0.08); stroke-width: 2; }
+      .grid { fill: none; stroke: rgba(244, 244, 240, 0.03); stroke-width: 1; }
+      .lime { fill: #D4FF3D; }
+      .lime-stroke { stroke: #D4FF3D; fill: none; }
+      .paper { fill: #F4F4F0; }
+      .paper-soft { fill: #C9C9C2; }
+      .paper-mute { fill: #80807A; }
+      .code-line { font-family: 'Geist Mono', 'SF Mono', Consolas, monospace; font-size: 14px; }
+      
+      @keyframes blink {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+      }
+      @keyframes drawLine {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+      }
+      
+      .cursor { animation: blink 1s infinite; }
+      .graph-line { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawLine 3s ease-out forwards infinite; }
+      .float-element { animation: float 6s ease-in-out infinite; }
+      .pulse-element { animation: pulse 2s infinite; }
+    </style>
+  </defs>
+  
+  <rect class="bg" width="800" height="600" rx="12" />
+  
+  <!-- Grid Background -->
+  <path class="grid" d="M0 50h800M0 100h800M0 150h800M0 200h800M0 250h800M0 300h800M0 350h800M0 400h800M0 450h800M0 500h800M0 550h800 M50 0v600M100 0v600M150 0v600M200 0v600M250 0v600M300 0v600M350 0v600M400 0v600M450 0v600M500 0v600M550 0v600M600 0v600M650 0v600M700 0v600M750 0v600" />
+  <rect class="border" width="800" height="600" rx="12" />
+  
+  <!-- Terminal Header -->
+  <rect fill="#18181C" x="1" y="1" width="798" height="40" rx="12" />
+  <circle cx="25" cy="20" r="5" fill="#FF5F56" />
+  <circle cx="45" cy="20" r="5" fill="#FFBD2E" />
+  <circle cx="65" cy="20" r="5" fill="#27C93F" />
+  <text class="code-line paper-soft" x="100" y="25">tehub-compiler v2.4.0</text>
+  
+  <!-- Code Area -->
+  <g class="float-element">
+    <rect x="50" y="80" width="320" height="200" rx="8" fill="#111114" stroke="rgba(212, 255, 61, 0.15)" stroke-width="1" />
+    <text class="code-line lime" x="70" y="110">const teHubAgent = {</text>
+    <text class="code-line paper" x="90" y="135">status: "compiling",</text>
+    <text class="code-line paper" x="90" y="160">sprints: ["Web", "App", "Automation"],</text>
+    <text class="code-line paper" x="90" y="185">deploySpeed: "99.9%",</text>
+    <text class="code-line paper" x="90" y="210">uptime: "active"</text>
+    <text class="code-line lime" x="70" y="235">};</text>
+    <text class="code-line paper-soft" x="70" y="260">&gt; npm run deploy --prod<text class="lime cursor">_</text></text>
+  </g>
+  
+  <!-- Graph Visual -->
+  <g class="float-element" style="animation-delay: -3s;">
+    <rect x="420" y="80" width="330" height="200" rx="8" fill="#111114" stroke="rgba(244, 244, 240, 0.06)" stroke-width="1" />
+    <text class="code-line paper" x="440" y="110">TRAFFIC MONITOR</text>
+    <text class="code-line paper-mute" x="650" y="110">100K REQ/S</text>
+    
+    <!-- Wave lines -->
+    <path class="lime-stroke graph-line" stroke-width="3" d="M 440 240 Q 480 180 520 220 T 600 130 T 680 160 T 730 110" />
+    <circle cx="730" cy="110" r="4" class="lime" />
+    <circle cx="730" cy="110" r="10" class="lime-stroke pulse-element" stroke-width="1.5" />
+  </g>
+  
+  <!-- Bottom Console -->
+  <rect x="50" y="320" width="700" height="230" rx="8" fill="#111114" stroke="rgba(244, 244, 240, 0.06)" stroke-width="1" />
+  <text class="code-line paper-mute" x="70" y="350">// System log streams</text>
+  <text class="code-line paper-soft" x="70" y="380">[13:12:02] <tspan fill="#D4FF3D">INFO</tspan> initializing cluster sync...</text>
+  <text class="code-line paper-soft" x="70" y="410">[13:12:03] <tspan fill="#27C93F">SUCCESS</tspan> database migration complete (PostgreSQL)</text>
+  <text class="code-line paper-soft" x="70" y="440">[13:12:04] <tspan fill="#D4FF3D">INFO</tspan> client connected via messaging webhooks</text>
+  <text class="code-line paper-soft" x="70" y="470">[13:12:05] <tspan fill="#1A2EFF">DEVOP</tspan> static site assets deployed to Cloudfront CDN</text>
+  <text class="code-line paper-soft" x="70" y="500">[13:12:06] <tspan fill="#D4FF3D">ACTIVE</tspan> monitoring routes, standard latency &lt; 40ms</text>
+  
+</svg>

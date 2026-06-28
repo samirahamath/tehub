@@ -1,0 +1,17 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="800" height="600" rx="12" fill="#0A0A0C" stroke="rgba(244,244,240,0.08)" stroke-width="2"/>
+  <rect x="100" y="80" width="600" height="440" rx="10" fill="#111114" stroke="rgba(244,244,240,0.06)" stroke-width="2"/>
+  <text x="140" y="140" font-family="'Geist Mono', monospace" font-size="14" fill="#80807A">TRANSACTION RECORD #5924</text>
+  <text x="140" y="180" font-family="sans-serif" font-size="18" fill="#F4F4F0">Standard Web Services Dev</text>
+  <text x="560" y="180" font-family="'Geist Mono', monospace" font-size="18" fill="#F4F4F0">,000.00</text>
+  <line x1="140" y1="210" x2="660" y2="210" stroke="rgba(244,244,240,0.1)"/>
+  <text x="140" y="240" font-family="sans-serif" font-size="18" fill="#F4F4F0">Messaging Integration Module</text>
+  <text x="560" y="240" font-family="'Geist Mono', monospace" font-size="18" fill="#F4F4F0">,000.00</text>
+  <line x1="140" y1="270" x2="660" y2="270" stroke="rgba(244,244,240,0.1)"/>
+  <text x="140" y="300" font-family="sans-serif" font-size="18" fill="#F4F4F0">Taxation &amp; GST Sync</text>
+  <text x="560" y="300" font-family="'Geist Mono', monospace" font-size="18" fill="#D4FF3D">,800.00</text>
+  <line x1="140" y1="330" x2="660" y2="330" stroke="rgba(244,244,240,0.1)"/>
+  <rect x="140" y="390" width="520" height="80" rx="8" fill="#18181C"/>
+  <text x="180" y="440" font-family="sans-serif" font-weight="bold" font-size="22" fill="#F4F4F0">TOTAL AMOUNT</text>
+  <text x="500" y="440" font-family="'Geist Mono', monospace" font-weight="bold" font-size="22" fill="#D4FF3D">,800.00</text>
+</svg>
