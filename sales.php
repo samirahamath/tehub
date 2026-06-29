@@ -24,9 +24,8 @@ require_once 'db.php';
     <div class="container container--wide">
       <nav class="nav" aria-label="Primary">
         <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</a>
-        <div class="nav-links" role="navigation">
+                <div class="nav-links" role="navigation">
           <a href="index.html">Index</a>
-          <a href="work.html">Work</a>
           <a href="services.php">Services</a>
           <a href="sales.php" aria-current="page">Sales</a>
           <a href="contact.html">Contact</a>
@@ -51,10 +50,9 @@ require_once 'db.php';
     </div>
   </header>
 
-  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
     <button class="drawer-close" aria-label="Close menu">Close</button>
     <a href="index.html">Index</a>
-    <a href="work.html">Work</a>
     <a href="services.php">Services</a>
     <a href="sales.php">Sales</a>
     <a href="client_login.php">Client Portal</a>
@@ -150,7 +148,7 @@ require_once 'db.php';
                 stroke-linejoin="round" />
             </svg>
           </a>
-          <a class="btn btn--ghost btn--lg" href="work.html">See Selected Work</a>
+          <a class="btn btn--ghost btn--lg" href="services.php">View all services</a>
         </div>
       </div>
     </section>
@@ -174,12 +172,10 @@ require_once 'db.php';
           </ul>
         </div>
         <div>
-          <h4>Work</h4>
+          <h4>Sales</h4>
           <ul>
-            <li><a href="work.html">Selected work</a></li>
-            <li><a href="work.html#archive">Archive</a></li>
-            <li><a href="work.html#webdev">Web Dev</a></li>
-            <li><a href="work.html#appdev">App Dev</a></li>
+            <li><a href="sales.php">Sales Solutions</a></li>
+            <li><a href="sales.php#pricing">Pricing</a></li>
           </ul>
         </div>
         <div>
