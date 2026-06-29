@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Client Registration · TEHUB Portal</title>
+  <title>Client Registration · THE EXPERT HUB Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" />
@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
   <div class="register-card">
     <div class="header-text">
-      <div style="font-size: 22px; font-weight: bold; letter-spacing: 2px; color: #a3e635;">TEHUB</div>
+      <div style="font-size: 22px; font-weight: bold; letter-spacing: 2px; color: #a3e635;">THE EXPERT HUB</div>
       <h1>Create Client Account</h1>
       <p>Sign up to order services &amp; track projects</p>
     </div>

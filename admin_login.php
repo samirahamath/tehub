@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Admin Login · TEHUB Management</title>
+  <title>Admin Login · THE EXPERT HUB Management</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
@@ -149,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
   <div class="login-card">
     <div class="login-header">
-      <div style="font-size: 24px; font-weight: bold; letter-spacing: 2px; color: #a3e635;">TEHUB</div>
+      <div style="font-size: 24px; font-weight: bold; letter-spacing: 2px; color: #a3e635;">THE EXPERT HUB</div>
       <h1>Admin Control Panel</h1>
       <p>Sign in to manage services, pricing &amp; orders</p>
     </div>

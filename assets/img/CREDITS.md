@@ -12,7 +12,7 @@ If you're shipping a real Brivon-based site, replace these placeholders with you
 | services-hero.jpg | 7335420 | https://www.pexels.com/photo/7335420/ |
 | contact-hero.jpg | 35877676 | https://www.pexels.com/photo/35877676/ |
 | contact-room.jpg | 7205893 | https://www.pexels.com/photo/7205893/ |
-| work-atrium.jpg | 11067991 | https://www.pexels.com/photo/11067991/ |
+| work- .jpg | 11067991 | https://www.pexels.com/photo/11067991/ |
 | work-still-1.jpg | 5710046 | https://www.pexels.com/photo/5710046/ |
 | work-arch.jpg | 33827335 | https://www.pexels.com/photo/33827335/ |
 | work-food.jpg | 4051730 | https://www.pexels.com/photo/4051730/ |

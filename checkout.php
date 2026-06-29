@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <hr style="border-color:rgba(255,255,255,0.1); margin:20px 0;" />
       
       <div style="font-size:13px; color:#a0aec0;">Duration Target: <strong><?= htmlspecialchars($service['duration_info']) ?></strong></div>
-      <div class="price-tag">$<?= number_format($service['price'], 2) ?></div>
+      <div class="price-tag">₹<?= number_format($service['price'], 2) ?></div>
       
       <div style="margin-top: 20px;">
         <strong style="font-size:13px; color:#a0aec0; display:block; margin-bottom:8px;">Included Deliverables:</strong>
@@ -169,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </div>
         <?php endif; ?>
 
-        <button type="submit" class="btn-pay">Confirm &amp; Pay $<?= number_format($service['price'], 2) ?></button>
+        <button type="submit" class="btn-pay">Confirm &amp; Pay ₹<?= number_format($service['price'], 2) ?></button>
       </form>
       
       <div style="text-align:center; margin-top:20px;">

@@ -18,8 +18,8 @@ if (empty($services)) {
             'id' => 1,
             'title' => 'MVP & Automation',
             'short_description' => 'For early-stage startups needing a functional prototype to showcase to investors, or businesses seeking custom workflow scripting and integrations.',
-            'price' => 15000,
-            'price_prefix' => 'From $',
+            'price' => 10000,
+            'price_prefix' => 'From ₹',
             'duration_info' => '2 — 4 weeks',
             'features' => "1 Lead architect · 1 developer\nFully functional application prototype\nClean TypeScript backend & Next.js frontend\nCustom workflow integrations (Zapier, Make, custom APIs)\nZero-downtime cloud hosting setup (Vercel / AWS)\n3-month code warranty & updates"
         ],
@@ -27,17 +27,17 @@ if (empty($services)) {
             'id' => 2,
             'title' => 'Custom App & Web',
             'short_description' => 'Our core tier — custom web platforms, native or cross-platform mobile apps (Flutter / React Native), high-performance databases, and custom API systems built for scaling.',
-            'price' => 45000,
-            'price_prefix' => 'From $',
+            'price' => 25000,
+            'price_prefix' => 'From ₹',
             'duration_info' => '2 — 3 months',
             'features' => "1 Project lead · 2 developers · 1 DevOps\nProduction-grade web or mobile app codebase\nAutomated unit and integration testing pipelines\nAdvanced cloud config (AWS / GCP / Docker)\nFull database architecture & schema migrations\n12-month hosting maintenance & backups\nComprehensive API docs & system runbooks"
         ],
         [
             'id' => 3,
             'title' => 'Enterprise Partnership',
-            'short_description' => 'A long-term engineering partnership. TEHUB functions as your dedicated engineering and product squad, delivering weekly sprints and feature updates.',
-            'price' => 100000,
-            'price_prefix' => 'From $',
+            'short_description' => 'A long-term engineering partnership. THE EXPERT HUB functions as your dedicated engineering and product squad, delivering weekly sprints and feature updates.',
+            'price' => 75000,
+            'price_prefix' => 'From ₹',
             'duration_info' => 'retainer scale',
             'features' => "Dedicated lead engineer, frontend, backend, & QA\nContinuous integration & deployment (CI/CD)\nPriority SLA on bug fixes and incident response\nBi-weekly sprint planning & demo presentations\nComprehensive security audits & code reviews\nFull access to private packages & shared modules\n24/7 server health and load monitoring"
         ]
@@ -50,9 +50,9 @@ if (empty($services)) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TEHUB · Services &amp; Rates — Premium Development Agency</title>
+  <title>THE EXPERT HUB · Services &amp; Rates — Premium Development Agency</title>
   <meta name="description"
-    content="TEHUB's three-tier service offering — MVP &amp; Automation, Custom App &amp; Web, and Enterprise Partnerships — with full agile process, rates, and FAQ." />
+    content="THE EXPERT HUB's three-tier service offering — MVP &amp; Automation, Custom App &amp; Web, and Enterprise Partnerships — with full agile process, rates, and FAQ." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
@@ -66,12 +66,13 @@ if (empty($services)) {
   <header class="site-header">
     <div class="container container--wide">
       <nav class="nav" aria-label="Primary">
-        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span> TEHUB</a>
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</a>
         <div class="nav-links" role="navigation">
           <a href="index.html">Index</a>
           <a href="work.html">Work</a>
-          <a href="studio.html">Studio</a>
+          
           <a href="services.php" aria-current="page">Services</a>
+          <a href="sales.php">Sales</a>
           <a href="contact.html">Contact</a>
         </div>
         <div class="nav-cta-row">
@@ -173,7 +174,7 @@ if (empty($services)) {
             <article class="tier-card <?= $is_featured ? 'featured' : '' ?>">
               <span class="label"><?= htmlspecialchars($tier_label) ?></span>
               <h3><?= htmlspecialchars($s['title']) ?></h3>
-              <span class="tier-meta"><?= htmlspecialchars($s['price_prefix'] ?? 'From $') ?><?= number_format($s['price']) ?> · <?= htmlspecialchars($s['duration_info'] ?? '') ?></span>
+              <span class="tier-meta"><?= htmlspecialchars($s['price_prefix'] ?? 'From ₹') ?><?= number_format($s['price']) ?> · <?= htmlspecialchars($s['duration_info'] ?? '') ?></span>
               <hr class="tier-divider" />
               <p><?= htmlspecialchars($s['short_description']) ?></p>
               <ul class="tier-list">

@@ -255,18 +255,14 @@ p:last-child { margin-bottom: 0; }
   text-transform: uppercase;
 }
 .brand-mark {
-  width: 28px; height: 28px;
-  background: var(--lime);
+  width: 32px; height: 32px;
+  background: url('../img/logo_mark.png') center/contain no-repeat;
   display: inline-block;
   position: relative;
-  border-radius: 4px;
+  vertical-align: middle;
 }
 .brand-mark::after {
-  content: '';
-  position: absolute;
-  inset: 6px;
-  background: var(--ink-000);
-  clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%);
+  display: none;
 }
 .nav-links {
   display: flex;
@@ -625,6 +621,9 @@ p:last-child { margin-bottom: 0; }
   align-items: start;
 }
 .chapter-grid .label { margin-bottom: var(--space-4); }
+.chapter-body {
+  padding-left: clamp(1rem, 3vw, 3.5rem);
+}
 .chapter-body p {
   font-size: var(--text-lg);
   line-height: 1.65;
@@ -1082,8 +1081,9 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.3;
   text-transform: uppercase;
   margin-bottom: var(--space-3);
+  color: #ffffff !important;
 }
-.faq-card p { color: var(--fg-soft); font-size: var(--text-sm); }
+.faq-card p { color: rgba(255, 255, 255, 0.85) !important; font-size: var(--text-sm); }
 
 /* ---------- 20. Journal / notes grid ----------------------------------- */
 .journal-grid {

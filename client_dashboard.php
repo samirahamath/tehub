@@ -32,7 +32,7 @@ if ($pdo) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Client Portal · TEHUB Dashboard</title>
+  <title>Client Portal · THE EXPERT HUB Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
@@ -168,7 +168,7 @@ if ($pdo) {
 <body>
 
   <header class="client-header">
-    <a href="client_dashboard.php" class="client-brand">TEHUB CLIENT PORTAL</a>
+    <a href="client_dashboard.php" class="client-brand">THE EXPERT HUB CLIENT PORTAL</a>
     <div style="display:flex; align-items:center; gap:20px;">
       <a href="services.php" style="color:#a0aec0; text-decoration:none; font-size:14px;">Browse Services</a>
       <span style="font-size:13px; color:#8a94a6;"><?= htmlspecialchars($client['name']) ?> (<?= htmlspecialchars($client['email']) ?>)</span>
@@ -210,7 +210,7 @@ if ($pdo) {
             <tr>
               <td><strong>#ORD-<?= str_pad($ord['id'], 4, '0', STR_PAD_LEFT) ?></strong><br/><small style="color:#8a94a6;"><?= htmlspecialchars($ord['payment_id'] ?? '') ?></small></td>
               <td><?= htmlspecialchars($ord['service_title']) ?></td>
-              <td><strong>$<?= number_format($ord['amount'], 2) ?></strong></td>
+              <td><strong>₹<?= number_format($ord['amount'], 2) ?></strong></td>
               <td><?= date('M d, Y', strtotime($ord['created_at'])) ?></td>
               <td><span class="badge-status status-<?= $ord['status'] ?>"><?= $ord['status'] ?></span></td>
             </tr>
