@@ -67,8 +67,9 @@ if (empty($services)) {
     <div class="container container--wide">
       <nav class="nav" aria-label="Primary">
         <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</a>
-                <div class="nav-links" role="navigation">
+                        <div class="nav-links" role="navigation">
           <a href="index.html">Index</a>
+          <a href="d-r.html">D-R</a>
           <a href="services.php" aria-current="page">Services</a>
           <a href="sales.php">Sales</a>
           <a href="contact.html">Contact</a>
@@ -93,9 +94,10 @@ if (empty($services)) {
     </div>
   </header>
 
-    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
     <button class="drawer-close" aria-label="Close menu">Close</button>
     <a href="index.html">Index</a>
+    <a href="d-r.html">D-R</a>
     <a href="services.php">Services</a>
     <a href="sales.php">Sales</a>
     <a href="client_login.php">Client Portal</a>
