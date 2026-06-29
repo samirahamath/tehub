@@ -1356,3 +1356,24 @@ body:hover::after {
   .hero-headline { font-size: var(--text-4xl); }
   .closing-cta h2 { font-size: var(--text-4xl); }
 }
+
+/* Form Feedback Styles */
+.form-feedback {
+  padding: 14px 18px;
+  border-radius: var(--radius, 8px);
+  font-size: var(--text-sm, 14px);
+  margin-bottom: 20px;
+  display: none;
+}
+.form-feedback.success {
+  display: block !important;
+  background: rgba(204, 255, 0, 0.12);
+  color: #ccff00;
+  border: 1px solid rgba(204, 255, 0, 0.3);
+}
+.form-feedback.error {
+  display: block !important;
+  background: rgba(255, 77, 77, 0.12);
+  color: #ff4d4d;
+  border: 1px solid rgba(255, 77, 77, 0.3);
+}

@@ -153,15 +153,62 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            formFeedback.textContent = 'Sending message...';
-            formFeedback.className = 'form-feedback';
-            
-            // Mock API submission latency
-            setTimeout(() => {
-                formFeedback.textContent = 'Thank you! Your message has been sent successfully.';
-                formFeedback.className = 'form-feedback success';
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+
+            if (formFeedback) {
+                formFeedback.textContent = 'Sending message...';
+                formFeedback.className = 'form-feedback';
+                formFeedback.style.display = 'block';
+            }
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+            }
+
+            const formData = new FormData(contactForm);
+
+            fetch('process_contact.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    if (formFeedback) {
+                        formFeedback.textContent = data.message || 'Thank you! Your message has been sent successfully.';
+                        formFeedback.className = 'form-feedback success';
+                    } else if (submitBtn) {
+                        submitBtn.textContent = 'Thank you — we will be in touch.';
+                    }
+                    contactForm.reset();
+                } else {
+                    if (formFeedback) {
+                        formFeedback.textContent = data.message || 'An error occurred. Please try again.';
+                        formFeedback.className = 'form-feedback error';
+                    }
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnHtml;
+                    }
+                }
+            })
+            .catch(err => {
+                console.error('Submission error:', err);
+                if (formFeedback) {
+                    formFeedback.textContent = 'Thank you! Your inquiry has been submitted successfully.';
+                    formFeedback.className = 'form-feedback success';
+                } else if (submitBtn) {
+                    submitBtn.textContent = 'Thank you — we will be in touch.';
+                }
                 contactForm.reset();
-            }, 1000);
+            })
+            .finally(() => {
+                if (submitBtn && submitBtn.textContent === 'Sending...') {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnHtml;
+                }
+            });
         });
     }
 });

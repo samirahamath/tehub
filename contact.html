@@ -156,8 +156,8 @@
           </p>
         </div>
 
-        <form class="form-card"
-          onsubmit="event.preventDefault(); this.querySelector('button[type=submit]').textContent='Thank you — we will be in touch.';">
+        <div id="form-feedback" class="form-feedback" style="display: none; margin-bottom: 20px; padding: 15px; border-radius: 8px; font-weight: 500;"></div>
+        <form class="form-card" id="contact-form" action="process_contact.php" method="POST">
           <div class="form-row">
             <div class="form-field">
               <label for="f-name">Your name</label>
