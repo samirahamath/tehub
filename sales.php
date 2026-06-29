@@ -81,7 +81,7 @@
           </div>
           <div class="hero-media">
             <video autoplay loop muted playsinline aria-label="Bulk WhatsApp SMS Automation Engine" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg, 16px);">
-              <source src="assets/sales-hero.mp4" type="video/mp4">
+              <source src="assets/img/sales-hero.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             <div class="floating-tag ft-top">
