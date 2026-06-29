@@ -13,7 +13,7 @@ $client_email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
 $client_phone = preg_replace('/[^0-9]/', '', $_POST['phone'] ?? '');
 $client_query = strip_tags(trim($_POST['message'] ?? $_POST['brief'] ?? ''));
 
-// Format client phone to include country code 91 if 10 digits provided
+// Ensure country code 91 is prepended if 10-digit number is provided
 if (strlen($client_phone) === 10) {
     $client_phone = '91' . $client_phone;
 }
@@ -58,7 +58,7 @@ if (!empty($client_email) && !empty($client_phone)) {
     $token       = "Inayah@62"; // API token configured in settings
     $session_id  = "default";   // Session ID of your logged-in WhatsApp
 
-    // Helper function to send WhatsApp API payload with fallback across endpoints
+    // Helper function to send WhatsApp API payload
     if (!function_exists('sendWhatsAppMessage')) {
         function sendWhatsAppMessage($url, $to, $message, $session, $token) {
             $clean_to = preg_replace('/[^0-9]/', '', $to);
@@ -66,70 +66,25 @@ if (!empty($client_email) && !empty($client_phone)) {
                 $clean_to = '91' . $clean_to;
             }
 
-            $endpoints = [
-                $url,
-                "https://2fa.tehub.in/api/whatsapp.php",
-                "https://sale.theexperthub.in/api/whatsapp.php"
-            ];
-            $endpoints = array_unique($endpoints);
+            $payload = json_encode([
+                'to'      => $clean_to,
+                'message' => $message,
+                'session' => $session,
+                'token'   => $token,
+                'apikey'  => $token
+            ]);
 
-            $payload_array = [
-                'session'    => $session,
-                'id'         => $session,
-                'session_id' => $session,
-                'instance'   => $session,
-                'to'         => $clean_to,
-                'number'     => $clean_to,
-                'phone'      => $clean_to,
-                'receiver'   => $clean_to,
-                'body'       => $message,
-                'message'    => $message,
-                'msg'        => $message,
-                'text'       => $message,
-                'token'      => $token,
-                'apikey'     => $token,
-                'api_key'    => $token,
-                'key'        => $token
-            ];
-
-            $payload_json = json_encode($payload_array);
-            $last_res = '';
-
-            foreach ($endpoints as $ep) {
-                $target_url = $ep;
-                $query_params = 'session=' . urlencode($session)
-                              . '&id=' . urlencode($session)
-                              . '&session_id=' . urlencode($session)
-                              . '&instance=' . urlencode($session)
-                              . '&token=' . urlencode($token)
-                              . '&apikey=' . urlencode($token)
-                              . '&api_key=' . urlencode($token);
-                $target_url .= (strpos($target_url, '?') !== false ? '&' : '?') . $query_params;
-
-                $ch = curl_init($target_url);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_POST, true);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $payload_json);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-                curl_setopt($ch, CURLOPT_HTTPHEADER, [
-                    'Content-Type: application/json',
-                    'Authorization: Bearer ' . $token,
-                    'token: ' . $token,
-                    'apikey: ' . $token,
-                    'api-key: ' . $token
-                ]);
-                curl_setopt($ch, CURLOPT_TIMEOUT, 6);
-                $res = curl_exec($ch);
-                $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-                curl_close($ch);
-
-                if ($code >= 200 && $code < 400 && !empty($res)) {
-                    return $res;
-                }
-                $last_res = $res;
-            }
-            return $last_res;
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 8);
+            $response = curl_exec($ch);
+            curl_close($ch);
+            return $response;
         }
     }
 
