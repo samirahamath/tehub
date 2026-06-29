@@ -67,27 +67,46 @@ if (!empty($client_email) && !empty($client_phone)) {
                 $clean_to = '91' . $clean_to;
             }
 
+            // Append session query string parameters to URL
+            $target_url = $url;
+            $query_params = 'session=' . urlencode($session)
+                          . '&id=' . urlencode($session)
+                          . '&session_id=' . urlencode($session)
+                          . '&instance=' . urlencode($session)
+                          . '&token=' . urlencode($token)
+                          . '&apikey=' . urlencode($token);
+            $target_url .= (strpos($target_url, '?') !== false ? '&' : '?') . $query_params;
+
             $payload = json_encode([
-                'to'       => $clean_to,
-                'number'   => $clean_to,
-                'phone'    => $clean_to,
-                'receiver' => $clean_to,
-                'message'  => $message,
-                'msg'      => $message,
-                'text'     => $message,
-                'session'  => $session,
-                'token'    => $token,
-                'apikey'   => $token,
-                'key'      => $token
+                'session'    => $session,
+                'id'         => $session,
+                'session_id' => $session,
+                'instance'   => $session,
+                'to'         => $clean_to,
+                'number'     => $clean_to,
+                'phone'      => $clean_to,
+                'receiver'   => $clean_to,
+                'body'       => $message,
+                'message'    => $message,
+                'msg'        => $message,
+                'text'       => $message,
+                'token'      => $token,
+                'apikey'     => $token,
+                'key'        => $token
             ]);
 
-            $ch = curl_init($url);
+            $ch = curl_init($target_url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                'Content-Type: application/json',
+                'Authorization: Bearer ' . $token,
+                'token: ' . $token,
+                'apikey: ' . $token
+            ]);
             curl_setopt($ch, CURLOPT_TIMEOUT, 8);
             $res = curl_exec($ch);
             curl_close($ch);
