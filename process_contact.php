@@ -1,11 +1,22 @@
 <?php
-header('Content-Type: application/json');
+// Determine if request is AJAX
+$is_ajax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') 
+        || (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false);
+
+if ($is_ajax) {
+    header('Content-Type: application/json');
+}
 
 // 1. Collect form data from contact form
 $client_name  = strip_tags(trim($_POST['name'] ?? ''));
 $client_email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
 $client_phone = preg_replace('/[^0-9]/', '', $_POST['phone'] ?? '');
 $client_query = strip_tags(trim($_POST['message'] ?? $_POST['brief'] ?? ''));
+
+// Format client phone to include country code 91 if 10 digits provided
+if (strlen($client_phone) === 10) {
+    $client_phone = '91' . $client_phone;
+}
 
 if (!empty($client_email) && !empty($client_phone)) {
 
@@ -50,12 +61,24 @@ if (!empty($client_email) && !empty($client_phone)) {
     // Helper function to send WhatsApp API payload
     if (!function_exists('sendWhatsAppMessage')) {
         function sendWhatsAppMessage($url, $to, $message, $session, $token) {
+            // Clean number
+            $clean_to = preg_replace('/[^0-9]/', '', $to);
+            if (strlen($clean_to) === 10) {
+                $clean_to = '91' . $clean_to;
+            }
+
             $payload = json_encode([
-                'to'      => $to,
-                'message' => $message,
-                'session' => $session,
-                'token'   => $token,
-                'apikey'  => $token
+                'to'       => $clean_to,
+                'number'   => $clean_to,
+                'phone'    => $clean_to,
+                'receiver' => $clean_to,
+                'message'  => $message,
+                'msg'      => $message,
+                'text'     => $message,
+                'session'  => $session,
+                'token'    => $token,
+                'apikey'   => $token,
+                'key'      => $token
             ]);
 
             $ch = curl_init($url);
@@ -65,9 +88,10 @@ if (!empty($client_email) && !empty($client_phone)) {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
             curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 6);
-            curl_exec($ch);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 8);
+            $res = curl_exec($ch);
             curl_close($ch);
+            return $res;
         }
     }
 
@@ -86,7 +110,6 @@ if (!empty($client_email) && !empty($client_phone)) {
     // ────────────────────────────────────────────────────────
     // PART C: SEND LEADS REPORT TO ADMIN NUMBERS (2 NUMBERS)
     // ────────────────────────────────────────────────────────
-    // Enter the two admin mobile numbers (with country code, e.g. 91xxxxxxxxxx)
     $admin_numbers = [
         '919150137159', // Admin Number 1
         '918667702473'  // Admin Number 2
@@ -103,8 +126,18 @@ if (!empty($client_email) && !empty($client_phone)) {
         sendWhatsAppMessage($gateway_url, $admin_phone, $admin_whatsapp_message, $session_id, $token);
     }
 
-    echo json_encode(['status' => 'success', 'message' => 'Thank you! Your message has been sent successfully.']);
+    if ($is_ajax) {
+        echo json_encode(['status' => 'success', 'message' => 'Thank you! Your message has been sent successfully.']);
+    } else {
+        header('Location: contact.html?status=success#intake');
+        exit();
+    }
 } else {
-    echo json_encode(['status' => 'error', 'message' => 'Please provide a valid email address and mobile number.']);
+    if ($is_ajax) {
+        echo json_encode(['status' => 'error', 'message' => 'Please provide a valid email address and mobile number.']);
+    } else {
+        header('Location: contact.html?status=error#intake');
+        exit();
+    }
 }
 ?>
