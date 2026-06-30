@@ -1,0 +1,393 @@
+/* THE EXPERT HUB — Premium FAQ Chatbot Styling */
+
+:root {
+  --chat-bg: rgba(10, 10, 12, 0.85); /* Glassmorphic matching --ink-deep */
+  --chat-card: rgba(24, 24, 28, 0.95); /* Elevated background */
+  --chat-border: rgba(244, 244, 240, 0.08); /* Matching --ink-line */
+  --chat-glow: rgba(212, 255, 61, 0.15); /* Matching --lime-glow */
+}
+
+/* Chatbot container */
+.tehub-chat-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  font-family: var(--font-body), sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Floating Action Button (Trigger) */
+.tehub-chat-trigger {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink-000);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px var(--lime-glow), 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  outline: none;
+}
+
+.tehub-chat-trigger:hover {
+  transform: scale(1.08) translateY(-2px);
+  background: var(--lime-soft);
+  box-shadow: 0 12px 40px rgba(212, 255, 61, 0.3), 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.tehub-chat-trigger:active {
+  transform: scale(0.95);
+}
+
+/* Notification badge */
+.tehub-chat-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 14px;
+  height: 14px;
+  background: #ff4a4a;
+  border: 2px solid var(--ink-deep);
+  border-radius: 50%;
+  animation: pulse-red 2s infinite;
+}
+
+/* Icons */
+.tehub-chat-icon-open,
+.tehub-chat-icon-close {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tehub-chat-widget.open .tehub-chat-icon-open {
+  transform: rotate(-90deg) scale(0);
+  opacity: 0;
+  position: absolute;
+}
+
+.tehub-chat-widget:not(.open) .tehub-chat-icon-close {
+  transform: rotate(90deg) scale(0);
+  opacity: 0;
+  position: absolute;
+}
+
+/* Chat Window */
+.tehub-chat-window {
+  width: 380px;
+  max-width: calc(100vw - 48px);
+  height: 520px;
+  max-height: calc(100vh - 120px);
+  background: var(--chat-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--chat-border);
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tehub-chat-widget.open .tehub-chat-window {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+/* Header */
+.tehub-chat-header {
+  padding: 16px var(--space-4, 20px);
+  background: rgba(24, 24, 28, 0.6);
+  border-bottom: 1px solid var(--chat-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tehub-chat-bot-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tehub-chat-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--chat-border);
+  border: 1.5px solid var(--lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  position: relative;
+}
+
+.tehub-chat-status-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 9px;
+  height: 9px;
+  background: #39d353;
+  border: 1.5px solid var(--ink-deep);
+  border-radius: 50%;
+}
+
+.tehub-chat-bot-info h4 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--paper);
+  line-height: 1.2;
+}
+
+.tehub-chat-bot-info span {
+  font-size: 0.75rem;
+  color: var(--paper-soft);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tehub-chat-close {
+  background: transparent;
+  border: none;
+  color: var(--paper-mute);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.tehub-chat-close:hover {
+  color: var(--paper);
+  background: var(--chat-border);
+}
+
+/* Messages Area */
+.tehub-chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styles */
+.tehub-chat-messages::-webkit-scrollbar {
+  width: 5px;
+}
+.tehub-chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tehub-chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.tehub-chat-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Message Bubble */
+.tehub-message {
+  max-width: 82%;
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  animation: message-pop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.tehub-message--bot {
+  background: var(--chat-card);
+  border: 1px solid var(--chat-border);
+  color: var(--paper);
+  align-self: flex-start;
+  border-radius: 0 16px 16px 16px;
+}
+
+.tehub-message--user {
+  background: var(--lime);
+  color: var(--ink-000);
+  align-self: flex-end;
+  border-radius: 16px 16px 0 16px;
+  font-weight: 500;
+}
+
+/* Typing Indicator */
+.tehub-typing-indicator {
+  display: flex;
+  gap: 4px;
+  padding: 12px 16px;
+  background: var(--chat-card);
+  border: 1px solid var(--chat-border);
+  border-radius: 0 16px 16px 16px;
+  align-self: flex-start;
+  width: fit-content;
+}
+
+.tehub-typing-indicator span {
+  width: 6px;
+  height: 6px;
+  background: var(--paper-soft);
+  border-radius: 50%;
+  animation: typing-dots 1.4s infinite ease-in-out;
+}
+
+.tehub-typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.tehub-typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+/* Quick Replies (Preset FAQ chips) */
+.tehub-quick-replies {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--chat-border);
+  background: rgba(24, 24, 28, 0.3);
+}
+
+.tehub-quick-replies-title {
+  font-size: 0.75rem;
+  color: var(--paper-mute);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.tehub-quick-replies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 96px;
+  overflow-y: auto;
+}
+
+.tehub-reply-btn {
+  background: var(--chat-card);
+  border: 1px solid var(--chat-border);
+  color: var(--paper-soft);
+  padding: 8px 12px;
+  border-radius: 30px;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: var(--font-body), sans-serif;
+}
+
+.tehub-reply-btn:hover {
+  background: var(--chat-border);
+  color: var(--lime);
+  border-color: var(--lime-soft);
+  transform: translateY(-1px);
+}
+
+/* Footer / Input area */
+.tehub-chat-input-container {
+  padding: 12px 20px;
+  background: rgba(10, 10, 12, 0.95);
+  border-top: 1px solid var(--chat-border);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.tehub-chat-input {
+  flex: 1;
+  background: var(--chat-card);
+  border: 1px solid var(--chat-border);
+  color: var(--paper);
+  padding: 10px 14px;
+  border-radius: 24px;
+  font-size: 0.875rem;
+  outline: none;
+  font-family: var(--font-body), sans-serif;
+  transition: border-color 0.2s ease;
+}
+
+.tehub-chat-input:focus {
+  border-color: var(--lime);
+}
+
+.tehub-chat-input::placeholder {
+  color: var(--paper-mute);
+}
+
+.tehub-chat-send {
+  background: var(--lime);
+  color: var(--ink-000);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.tehub-chat-send:hover {
+  background: var(--lime-soft);
+  transform: scale(1.05);
+}
+
+.tehub-chat-send:active {
+  transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(255, 74, 74, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(255, 74, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 74, 74, 0); }
+}
+
+@keyframes typing-dots {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}
+
+@keyframes message-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive adjustment */
+@media (max-width: 480px) {
+  .tehub-chat-widget {
+    bottom: 16px;
+    right: 16px;
+  }
+  .tehub-chat-window {
+    width: calc(100vw - 32px);
+    height: 480px;
+    bottom: 12px;
+  }
+}

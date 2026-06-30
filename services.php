@@ -59,6 +59,7 @@ try {
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Boldonse&family=Inter+Tight:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/chatbot.css" />
 </head>
 
 <body>
@@ -247,5 +248,8 @@ try {
     </section>
 
   </main>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/chatbot.js" defer></script>
 </body>
 </html>
