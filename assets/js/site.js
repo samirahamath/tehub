@@ -443,7 +443,7 @@
     {
       keywords: ['location', 'where', 'address', 'office', 'hyderabad', 'chennai', 'india'],
       question: "Where are you located?",
-      answer: "THE EXPERT HUB is based in India, operating principally between Chennai and Hyderabad. We collaborate with clients globally. You can request a video call or meeting via our contact form."
+      answer: "THE EXPERT HUB is based in Chennai, India. We collaborate with clients globally. You can request a video call or meeting via our contact form."
     },
     {
       keywords: ['contact', 'email', 'start', 'hire', 'phone', 'reach', 'interested', 'call'],
