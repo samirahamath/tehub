@@ -127,20 +127,20 @@
             <a class="btn btn--ghost" href="https://school.tehub.in" target="_blank" rel="noopener">Visit Trial &amp; Check Pricing</a>
           </article>
 
-          <!-- Product 2: IVR Project -->
+          <!-- Product 2: Rest Hub Project -->
           <article class="tier-card">
-            <span class="label">Product 02 · Telephony</span>
-            <h3>IVR Auto-Calling System</h3>
-            <span class="tier-meta">Auto Calls · ivr.tehub.in</span>
+            <span class="label">Product 02 · Hospitality</span>
+            <h3>Rest Hub</h3>
+            <span class="tier-meta">RMS Portal · rest.tehub.in</span>
             <hr class="tier-divider" />
-            <p>An intelligent autocalling system driven by custom voice commands. Dispatches automated calls on schedule and records calls to capture high-converting leads for your company.</p>
+            <p>An advanced Restaurant Management System (RMS) designed for contact-free dining. Empowers tables with automated ordering and checkout workflows without staff intervention.</p>
             <ul class="tier-list">
-              <li>Auto-calling system driven by custom voice commands</li>
-              <li>Schedule exact timing for outbound call dispatches</li>
-              <li>Automatic call recording &amp; performance logging</li>
-              <li>Converts every outbound call into confirmed incoming leads</li>
+              <li>QR Code scan-to-order &amp; digital menus</li>
+              <li>Automatic bill generation &amp; payment processing</li>
+              <li>NFC integration for instant tap-to-order tables</li>
+              <li>Fully automated workflow requiring no manual staff</li>
             </ul>
-            <a class="btn btn--ghost" href="https://ivr.tehub.in/login.php" target="_blank" rel="noopener">Try Portal &amp; Login</a>
+            <a class="btn btn--ghost" href="https://rest.tehub.in" target="_blank" rel="noopener">Try Portal &amp; Login</a>
           </article>
 
           <!-- Product 3: Bulk SMS via WhatsApp & Telegram -->
