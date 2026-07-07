@@ -255,18 +255,14 @@ p:last-child { margin-bottom: 0; }
   text-transform: uppercase;
 }
 .brand-mark {
-  width: 28px; height: 28px;
-  background: var(--lime);
+  width: 32px; height: 32px;
+  background: url('../img/logo.png') no-repeat center center;
+  background-size: contain;
   display: inline-block;
   position: relative;
-  border-radius: 4px;
 }
 .brand-mark::after {
-  content: '';
-  position: absolute;
-  inset: 6px;
-  background: var(--ink-000);
-  clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%);
+  display: none;
 }
 .nav-links {
   display: flex;
