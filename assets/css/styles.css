@@ -1028,6 +1028,7 @@ p:last-child { margin-bottom: 0; }
 .form-field input,
 .form-field textarea,
 .form-field select {
+  width: 100%;
   background: var(--ink-000);
   border: 1px solid var(--rule-strong);
   border-radius: var(--radius);
@@ -1415,6 +1416,10 @@ body:hover::after {
   /* On mobile, also shift the chatbot widget up so it doesn't block the bottom nav */
   .tehub-chat-widget {
     bottom: 80px !important;
+  }
+  /* Reduce padding on the form card to fit mobile screens better */
+  .form-card {
+    padding: var(--space-5);
   }
 }
 
