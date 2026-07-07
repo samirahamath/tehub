@@ -1357,3 +1357,68 @@ body:hover::after {
   .hero-headline { font-size: var(--text-4xl); }
   .closing-cta h2 { font-size: var(--text-4xl); }
 }
+
+/* ---------- 19. Mobile Bottom Nav (App View) --------------------------- */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(10, 10, 12, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--rule);
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.mobile-bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  color: var(--fg-mute);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  gap: 4px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.mobile-bottom-nav__item:hover {
+  color: var(--fg);
+}
+
+.mobile-bottom-nav__item[aria-current="page"] {
+  color: var(--lime);
+}
+
+.mobile-bottom-nav__icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2px;
+  transition: stroke var(--dur-fast) var(--ease-out);
+}
+
+/* Adjust page spacing on mobile for bottom bar */
+@media (max-width: 720px) {
+  .mobile-bottom-nav {
+    display: flex;
+  }
+  body {
+    padding-bottom: 80px !important; /* space for bottom nav bar */
+  }
+  /* On mobile, also shift the chatbot widget up so it doesn't block the bottom nav */
+  .tehub-chat-widget {
+    bottom: 80px !important;
+  }
+}
+
