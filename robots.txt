@@ -1,0 +1,18 @@
+# robots.txt for tehub.in
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tehub.in/sitemap.xml
+
+# Block admin/login pages from indexing
+Disallow: /admin_dashboard.php
+Disallow: /admin_login.php
+Disallow: /admin_logout.php
+Disallow: /client_dashboard.php
+Disallow: /client_login.php
+Disallow: /client_logout.php
+Disallow: /client_register.php
+Disallow: /checkout.php
+Disallow: /db.php
+Disallow: /api.zip
