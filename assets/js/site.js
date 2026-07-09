@@ -110,7 +110,6 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      pointer-events: none;
     }
     .tehub-chat-trigger {
       width: 56px;
@@ -179,12 +178,14 @@
       overflow: hidden;
       margin-bottom: 16px;
       opacity: 0;
+      visibility: hidden;
       transform: translateY(20px) scale(0.95);
       pointer-events: none;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: visibility 0.4s, opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .tehub-chat-widget.open .tehub-chat-window {
       opacity: 1;
+      visibility: visible;
       transform: translateY(0) scale(1);
       pointer-events: auto;
     }
