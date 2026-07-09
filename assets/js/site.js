@@ -417,9 +417,9 @@
       from { opacity: 0; transform: translateY(8px) scale(0.96); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
-    @media (max-width: 480px) {
-      .tehub-chat-widget { bottom: 16px; right: 16px; }
-      .tehub-chat-window { width: calc(100vw - 32px); height: 480px; bottom: 12px; }
+    @media (max-width: 720px) {
+      .tehub-chat-widget { bottom: 80px; right: 16px; }
+      .tehub-chat-window { width: calc(100vw - 32px); height: 480px; }
     }
   `;
   const styleEl = document.createElement('style');
@@ -451,7 +451,7 @@
     {
       keywords: ['contact', 'email', 'start', 'hire', 'phone', 'reach', 'interested', 'call'],
       question: "How do I start a project?",
-      answer: "You can easily start a project by filling out the form on our <a href='contact.html' style='color: var(--lime); text-decoration: underline;'>Contact page</a>, or by emailing us directly at hello@tehub.in. Our team will get back to you within 24 hours."
+      answer: "You can easily start a project by filling out the form on our <a href='contact.php' style='color: var(--lime); text-decoration: underline;'>Contact page</a>, or by emailing us directly at hello@tehub.in. Our team will get back to you within 24 hours."
     },
     {
       keywords: ['services', 'dev', 'web', 'app', 'android', 'ios', 'automation', 'custom'],
