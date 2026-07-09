@@ -89,8 +89,7 @@
             </div>
           </div>
           <div class="hero-media">
-            <img src="assets/img/contact-hero.svg"
-              alt="A software engineer working at a desk next to an open notebook outlining a system build plan." />
+            <video src="assets/img/contact.mp4" autoplay loop muted playsinline alt="THE EXPERT HUB contact hero video showcase"></video>
             <div class="floating-tag ft-top">
               <span class="pill">Inbox</span>
               ANYA · NEW YORK
