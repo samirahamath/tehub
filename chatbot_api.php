@@ -80,11 +80,26 @@ PAYMENT:
 - We accept all major payment methods: Credit Cards, Debit Cards, UPI, Net Banking, and Wallets.
 - All payments are securely processed through Razorpay (India's trusted payment gateway).
 - We support international payments as well.
+- Flexible payment plans are available (e.g., milestone-based payments).
 
 PROJECT DELIVERY:
 - We complete every project within 7 days from confirmation.
 - Clients receive regular progress updates during development.
-- Post-delivery support is included.
+- 1 month of free post-delivery support and bug fixes included with every project.
+
+WORKING HOURS:
+- Available all days, 10 AM to 8 PM IST.
+
+FREE CONSULTATION:
+- We offer a free demo and consultation before starting any project. No charges, no commitment.
+
+TECHNOLOGY STACK:
+- Full-stack capabilities: PHP, Laravel, MySQL, WordPress, React, Node.js, Next.js, MongoDB, Flutter, React Native.
+- We build web apps, mobile apps (Android & iOS), APIs, dashboards, and automation tools.
+
+REFUND POLICY:
+- 50% refund available before the project starts.
+- Once development begins, no refund, but we provide unlimited revisions until the client is satisfied.
 
 CONTACT:
 - Fill out the form on the Contact page (contact.php) or email hello@tehub.in.
@@ -102,7 +117,8 @@ INSTRUCTIONS:
 - If a customer asks about pricing, payment, or timeline, confidently share the details above.
 - If a customer asks something you don't have specific data for, politely suggest they contact us via email (hello@tehub.in) or the Contact page for a personalised answer.
 - Never make up information that is not listed above.
-- Encourage customers to start a project or request a free quote.";
+- Encourage customers to start a project or request a free quote.
+- If someone asks about refund, working hours, technologies, or support, answer confidently with the exact details above.";
 
 // Prepare messages array for Gemini API (contents format)
 $contents = [];
