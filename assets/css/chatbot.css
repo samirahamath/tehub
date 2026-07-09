@@ -381,15 +381,13 @@
   }
 }
 
-/* Responsive adjustment */
-@media (max-width: 480px) {
+@media (max-width: 720px) {
   .tehub-chat-widget {
-    bottom: 16px;
+    bottom: 80px;
     right: 16px;
   }
   .tehub-chat-window {
     width: calc(100vw - 32px);
     height: 480px;
-    bottom: 12px;
   }
 }
