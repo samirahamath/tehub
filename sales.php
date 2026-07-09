@@ -223,9 +223,9 @@
       <div class="footer-bottom">
         <span>© 2026 THE EXPERT HUB · Engineered for performance.</span>
         <div class="footer-meta-links">
-          <a href="#">Privacy</a>
-          <a href="#">Imprint</a>
-          <a href="#">Sitemap</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="sitemap.xml">Sitemap</a>
         </div>
       </div>
     </div>
