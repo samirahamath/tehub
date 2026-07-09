@@ -1274,7 +1274,7 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.footer-bottom .footer-meta-links { display: flex; gap: var(--space-5); }
+.footer-bottom .footer-meta-links { display: flex; gap: var(--space-5); margin-right: 80px; }
 .footer-bottom a:hover { color: var(--lime); }
 
 /* ---------- Global Mouse Tracking Glow --------------------------------- */
@@ -1351,6 +1351,7 @@ body:hover::after {
   .award-cell { border-inline-end: 0; border-bottom: 1px solid var(--rule); }
   .award-cell:last-child { border-bottom: 0; }
   .footer-top { grid-template-columns: 1fr; gap: var(--space-5); }
+  .footer-bottom .footer-meta-links { margin-right: 0; }
   .hero-headline { font-size: var(--text-4xl); }
   .closing-cta h2 { font-size: var(--text-4xl); }
 }
