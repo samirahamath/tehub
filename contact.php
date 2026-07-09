@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Boldonse&family=Inter+Tight:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=1.3" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=1.4" />
   <link rel="stylesheet" href="assets/css/chatbot.css" />
 </head>
 

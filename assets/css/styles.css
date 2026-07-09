@@ -1026,7 +1026,16 @@ p:last-child { margin-bottom: 0; }
   color: var(--fg-mute);
 }
 .form-field input,
-.form-field textarea,
+.form-field textarea {
+  width: 100%;
+  background: var(--ink-000);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  color: var(--fg);
+  transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+  font-family: var(--font-body);
+}
 .form-field select {
   width: 100%;
   background: var(--ink-000);
@@ -1036,6 +1045,15 @@ p:last-child { margin-bottom: 0; }
   color: var(--fg);
   transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
   font-family: var(--font-body);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a0a0a5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 40px;
+  cursor: pointer;
 }
 .form-field input::placeholder,
 .form-field textarea::placeholder { color: var(--fg-deep); }
