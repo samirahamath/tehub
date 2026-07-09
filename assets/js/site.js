@@ -186,7 +186,7 @@
     .tehub-chat-widget.open .tehub-chat-window {
       opacity: 1;
       transform: translateY(0) scale(1);
-      pointer-events: all;
+      pointer-events: auto;
     }
     .tehub-chat-header {
       padding: 16px 20px;
