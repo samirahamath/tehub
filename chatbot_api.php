@@ -79,6 +79,10 @@ READY PRODUCTS FOR SALE (Sales Page):
 CONTACT:
 - Fill out the form on the Contact page (contact.php) or email hello@tehub.in.
 - Anya and Eli are the product managers reading the intake inbox. Joon handles press/open-source. Felix handles careers/recruitment.
+- Social Media Links:
+  * LinkedIn: https://www.linkedin.com/company/142877064/
+  * Facebook: https://www.facebook.com/share/1HXUyXrCCS/
+  * Instagram: https://www.instagram.com/expert.hub_?igsh=MWNqamRhbnZxeThhaw==
 
 INSTRUCTIONS:
 - Be professional, friendly, and helpful.

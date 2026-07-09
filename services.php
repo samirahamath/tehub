@@ -255,6 +255,46 @@ try {
 
   </main>
 
+  <footer class="site-footer">
+    <div class="container container--wide">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.php"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</a>
+          <p class="footer-desc">
+            Brutalist software development and startup incubation agency. Based in Chennai, working worldwide.
+          </p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="index.php">Index</a></li>
+            <li><a href="d-r.php">D-R Startup</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="sales.php">Sales &amp; SMS</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="contact.php">Start a project</a></li>
+            <li><a href="https://www.linkedin.com/company/142877064/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/share/1HXUyXrCCS/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/expert.hub_?igsh=MWNqamRhbnZxeThhaw==" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 THE EXPERT HUB · Engineered for performance. Distributed by <a href="https://tehub.in/"
+            target="_blank">The Expert Hub</a></span>
+        <div class="footer-meta-links">
+          <a href="privacy.php">Privacy</a>
+          <a href="terms.php">Terms</a>
+          <a href="sitemap.php">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <!-- Mobile Bottom Navigation Bar (App View) -->
   <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
     <a href="index.php" class="mobile-bottom-nav__item">

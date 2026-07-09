@@ -246,9 +246,9 @@
           <h4>Connect</h4>
           <ul>
             <li><a href="contact.php">Start a project</a></li>
-            <li><a href="contact.php#press">Press</a></li>
-            <li><a href="contact.php#careers">Careers</a></li>
-            <li><a href="#">Newsletter</a></li>
+            <li><a href="https://www.linkedin.com/company/142877064/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/share/1HXUyXrCCS/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/expert.hub_?igsh=MWNqamRhbnZxeThhaw==" target="_blank" rel="noopener">Instagram</a></li>
           </ul>
         </div>
       </div>
