@@ -82,7 +82,7 @@ CONTACT:
 - Social Media Links:
   * LinkedIn: https://www.linkedin.com/company/142877064/
   * Facebook: https://www.facebook.com/share/1HXUyXrCCS/
-  * Instagram: https://www.instagram.com/expert.hub_?igsh=MWNqamRhbnZxeThhaw==
+  * Instagram: https://www.instagram.com/the_expert.hub_?igsh=MjBnNGQ2d3BkMmFp
 
 INSTRUCTIONS:
 - Be professional, friendly, and helpful.

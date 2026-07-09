@@ -722,7 +722,7 @@
             <li><a href="contact.php">Start a project</a></li>
             <li><a href="https://www.linkedin.com/company/142877064/" target="_blank" rel="noopener">LinkedIn</a></li>
             <li><a href="https://www.facebook.com/share/1HXUyXrCCS/" target="_blank" rel="noopener">Facebook</a></li>
-            <li><a href="https://www.instagram.com/expert.hub_?igsh=MWNqamRhbnZxeThhaw==" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.instagram.com/the_expert.hub_?igsh=MjBnNGQ2d3BkMmFp" target="_blank" rel="noopener">Instagram</a></li>
           </ul>
         </div>
       </div>
