@@ -7,7 +7,6 @@
   --chat-glow: rgba(212, 255, 61, 0.15); /* Matching --lime-glow */
 }
 
-/* Chatbot container */
 .tehub-chat-widget {
   position: fixed;
   bottom: 24px;
@@ -17,6 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  pointer-events: none;
 }
 
 /* Floating Action Button (Trigger) */
@@ -35,6 +35,7 @@
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   outline: none;
+  pointer-events: auto;
 }
 
 .tehub-chat-trigger:hover {
