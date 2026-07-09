@@ -21,12 +21,12 @@
   <header class="site-header">
     <div class="container container--wide">
       <nav class="nav" aria-label="Primary">
-        <a class="brand" href="index.php"><span class="brand-mark" aria-hidden="true"></span> TEHUB</a>
+        <a class="brand" href="index.php"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</a>
         <div class="nav-links" role="navigation">
           <a href="index.php">Index</a>
-          <a href="work.php">Work</a>
-          <a href="studio.php" aria-current="page">Studio</a>
+          <a href="d-r.php">D-R</a>
           <a href="services.php">Services</a>
+          <a href="sales.php">Sales</a>
           <a href="contact.php">Contact</a>
         </div>
         <div class="nav-cta-row">
@@ -46,8 +46,9 @@
   <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
     <button class="drawer-close" aria-label="Close menu">Close</button>
     <a href="index.php">Index</a>
-    <a href="work.php">D-R</a>
+    <a href="d-r.php">D-R</a>
     <a href="services.php">Services</a>
+    <a href="sales.php">Sales</a>
     <a href="contact.php">Contact</a>
   </div>
 

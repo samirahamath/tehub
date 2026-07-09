@@ -68,16 +68,15 @@ try {
   <header class="site-header">
     <div class="container container--wide">
       <nav class="nav" aria-label="Primary">
-        <a class="brand" href="index.php"><span class="brand-mark" aria-hidden="true"></span> TEHUB</a>
+        <a class="brand" href="index.php"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</a>
         <div class="nav-links" role="navigation">
           <a href="index.php">Index</a>
-          <a href="work.php">Work</a>
-          <a href="studio.php">Studio</a>
+          <a href="d-r.php">D-R</a>
           <a href="services.php" aria-current="page">Services</a>
+          <a href="sales.php">Sales</a>
           <a href="contact.php">Contact</a>
         </div>
         <div class="nav-cta-row">
-          <a href="/client_login.php" class="btn btn--ghost btn--sm">Client Portal</a>
           <a href="contact.php" class="btn btn--primary btn--sm">Start a project
             <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
               <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
@@ -94,9 +93,9 @@ try {
   <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
     <button class="drawer-close" aria-label="Close menu">Close</button>
     <a href="index.php">Index</a>
-    <a href="work.php">Work</a>
+    <a href="d-r.php">D-R</a>
     <a href="services.php">Services</a>
-    <a href="/client_login.php">Client Portal</a>
+    <a href="sales.php">Sales</a>
     <a href="contact.php">Contact</a>
   </div>
 
