@@ -225,7 +225,7 @@
         <div class="footer-meta-links">
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
-          <a href="sitemap.xml">Sitemap</a>
+          <a href="sitemap.html">Sitemap</a>
         </div>
       </div>
     </div>
