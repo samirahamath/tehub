@@ -21,16 +21,16 @@
   <header class="site-header">
     <div class="container container--wide">
       <nav class="nav" aria-label="Primary">
-        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span> TEHUB</a>
+        <a class="brand" href="index.php"><span class="brand-mark" aria-hidden="true"></span> TEHUB</a>
         <div class="nav-links" role="navigation">
-          <a href="index.html">Index</a>
-          <a href="work.html">Work</a>
-          <a href="studio.html" aria-current="page">Studio</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.php">Index</a>
+          <a href="work.php">Work</a>
+          <a href="studio.php" aria-current="page">Studio</a>
+          <a href="services.php">Services</a>
+          <a href="contact.php">Contact</a>
         </div>
         <div class="nav-cta-row">
-          <a href="contact.html" class="btn btn--primary btn--sm">Start a project
+          <a href="contact.php" class="btn btn--primary btn--sm">Start a project
             <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
               <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                 stroke-linejoin="round" />
@@ -45,10 +45,10 @@
 
   <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
     <button class="drawer-close" aria-label="Close menu">Close</button>
-    <a href="index.html">Index</a>
-    <a href="work.html">D-R</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.php">Index</a>
+    <a href="work.php">D-R</a>
+    <a href="services.php">Services</a>
+    <a href="contact.php">Contact</a>
   </div>
 
   <main id="main">
@@ -70,7 +70,7 @@
             </p>
             <div class="hero-cta-row">
               <a class="btn btn--primary btn--lg" href="#team">Meet the team</a>
-              <a class="btn btn--ghost btn--lg" href="contact.html">Start a project</a>
+              <a class="btn btn--ghost btn--lg" href="contact.php">Start a project</a>
             </div>
             <div class="hero-meta">
               <span><strong>2018</strong> · founded in Brooklyn</span>
@@ -216,7 +216,7 @@
               <li><b>Focus</b><span>Frontend architecture, mobile apps, product strategy</span></li>
               <li><b>Stack</b><span>Next.js, React Native, Vercel, Tailwind CSS</span></li>
             </ul>
-            <a class="btn btn--ghost" href="contact.html">Book a visit
+            <a class="btn btn--ghost" href="contact.php">Book a visit
               <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
                 <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                   stroke-linejoin="round" />
@@ -249,7 +249,7 @@
               <li><b>Focus</b><span>NestJS, Go, Python APIs, AWS cloud architecture, CI/CD</span></li>
               <li><b>Ops Tech</b><span>Docker, Kubernetes, GitHub Actions, Terraform</span></li>
             </ul>
-            <a class="btn btn--ghost" href="contact.html">Book a visit
+            <a class="btn btn--ghost" href="contact.php">Book a visit
               <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
                 <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                   stroke-linejoin="round" />
@@ -347,13 +347,13 @@
           We are currently hiring a junior developer based in Berlin and a freelance cloud engineer for the New York squad. Project enquiries receive replies in 48 hours; job inquiries inside 7 days.
         </p>
         <div class="cta-row">
-          <a class="btn btn--dark btn--lg" href="contact.html">Start a project
+          <a class="btn btn--dark btn--lg" href="contact.php">Start a project
             <svg class="arrow" width="16" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
               <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
           </a>
-          <a class="btn btn--ghost btn--lg" href="contact.html#careers">See open roles</a>
+          <a class="btn btn--ghost btn--lg" href="contact.php#careers">See open roles</a>
         </div>
       </div>
     </section>
@@ -371,27 +371,27 @@
         <div>
           <h4>Agency</h4>
           <ul>
-            <li><a href="studio.html">About</a></li>
-            <li><a href="studio.html#team">Team</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="services.html#rates">Rates</a></li>
+            <li><a href="studio.php">About</a></li>
+            <li><a href="studio.php#team">Team</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="services.php#rates">Rates</a></li>
           </ul>
         </div>
         <div>
           <h4>Work</h4>
           <ul>
-            <li><a href="work.html">Selected work</a></li>
-            <li><a href="work.html#archive">Archive</a></li>
-            <li><a href="work.html#webdev">Web Dev</a></li>
-            <li><a href="work.html#appdev">App Dev</a></li>
+            <li><a href="work.php">Selected work</a></li>
+            <li><a href="work.php#archive">Archive</a></li>
+            <li><a href="work.php#webdev">Web Dev</a></li>
+            <li><a href="work.php#appdev">App Dev</a></li>
           </ul>
         </div>
         <div>
           <h4>Connect</h4>
           <ul>
-            <li><a href="contact.html">Start a project</a></li>
-            <li><a href="contact.html#press">Press</a></li>
-            <li><a href="contact.html#careers">Careers</a></li>
+            <li><a href="contact.php">Start a project</a></li>
+            <li><a href="contact.php#press">Press</a></li>
+            <li><a href="contact.php#careers">Careers</a></li>
             <li><a href="#">Newsletter</a></li>
           </ul>
         </div>

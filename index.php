@@ -29,16 +29,16 @@
   <header class="site-header">
     <div class="container container--wide">
       <nav class="nav" aria-label="Primary">
-        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</a>
+        <a class="brand" href="index.php"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</a>
         <div class="nav-links" role="navigation">
-          <a href="index.html">Index</a>
-          <a href="d-r.html">D-R</a>
-          <a href="services.html">Services</a>
-          <a href="sales.html">Sales</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.php">Index</a>
+          <a href="d-r.php">D-R</a>
+          <a href="services.php">Services</a>
+          <a href="sales.php">Sales</a>
+          <a href="contact.php">Contact</a>
         </div>
         <div class="nav-cta-row">
-          <a href="contact.html" class="btn btn--primary btn--sm">Start a project
+          <a href="contact.php" class="btn btn--primary btn--sm">Start a project
             <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
               <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                 stroke-linejoin="round" />
@@ -53,11 +53,11 @@
 
   <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
     <button class="drawer-close" aria-label="Close menu">Close</button>
-    <a href="index.html">Index</a>
-    <a href="d-r.html">D-R</a>
-    <a href="services.html">Services</a>
-    <a href="sales.html">Sales</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.php">Index</a>
+    <a href="d-r.php">D-R</a>
+    <a href="services.php">Services</a>
+    <a href="sales.php">Sales</a>
+    <a href="contact.php">Contact</a>
   </div>
 
   <main id="main">
@@ -80,13 +80,13 @@
               automations.
             </p>
             <div class="hero-cta-row">
-              <a class="btn btn--primary btn--lg" href="work.html">See our work
+              <a class="btn btn--primary btn--lg" href="work.php">See our work
                 <svg class="arrow" width="16" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
                   <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
               </a>
-              <a class="btn btn--ghost btn--lg" href="services.html">Services &amp; rates</a>
+              <a class="btn btn--ghost btn--lg" href="services.php">Services &amp; rates</a>
             </div>
             <div class="hero-meta">
               <span><strong>140+</strong> · systems deployed</span>
@@ -148,7 +148,7 @@
         </div>
 
         <div class="work-grid">
-          <a class="work-item work-item--xl reveal" href="work.html">
+          <a class="work-item work-item--xl reveal" href="work.php">
             <div class="wm">
               <img src="assets/img/work-atrium.png"
                 alt="A clean, responsive dashboard displaying financial metrics and real-time commerce data analytics." />
@@ -168,7 +168,7 @@
             </div>
           </a>
 
-          <a class="work-item work-item--sm reveal" href="work.html">
+          <a class="work-item work-item--sm reveal" href="work.php">
             <div class="wm">
               <img src="assets/img/work-still-1.png"
                 alt="A mobile application preview showing real-time inventory management with barcodes and scans." />
@@ -188,7 +188,7 @@
             </div>
           </a>
 
-          <a class="work-item work-item--md reveal" href="work.html">
+          <a class="work-item work-item--md reveal" href="work.php">
             <div class="wm">
               <img src="assets/img/work-arch.svg"
                 alt="A high-performance modern web application with visual layouts and structured web components." />
@@ -208,7 +208,7 @@
             </div>
           </a>
 
-          <a class="work-item work-item--md reveal" href="work.html">
+          <a class="work-item work-item--md reveal" href="work.php">
             <div class="wm">
               <img src="assets/img/work-food.png"
                 alt="A terminal window displaying server-side script logs and database migration execution steps." />
@@ -228,7 +228,7 @@
             </div>
           </a>
 
-          <a class="work-item work-item--sm reveal" href="work.html">
+          <a class="work-item work-item--sm reveal" href="work.php">
             <div class="wm">
               <img src="assets/img/work-portrait-1.png"
                 alt="A visual workflow diagram outlining an automation script executing across APIs." />
@@ -248,7 +248,7 @@
             </div>
           </a>
 
-          <a class="work-item work-item--lg reveal" href="work.html">
+          <a class="work-item work-item--lg reveal" href="work.php">
             <div class="wm">
               <img src="assets/img/work-product.svg"
                 alt="A mobile dashboard interface showing location tracking and map routes." />
@@ -268,7 +268,7 @@
             </div>
           </a>
 
-          <a class="work-item work-item--sm reveal" href="work.html">
+          <a class="work-item work-item--sm reveal" href="work.php">
             <div class="wm">
               <img src="assets/img/work-still-2.svg"
                 alt="Automation console displaying cron jobs and script execution status." />
@@ -290,7 +290,7 @@
         </div>
 
         <div class="center-row" style="margin-top: var(--space-7); justify-content: center;">
-          <a class="btn btn--ghost btn--lg" href="work.html">All projects · 142
+          <a class="btn btn--ghost btn--lg" href="work.php">All projects · 142
             <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
               <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                 stroke-linejoin="round" />
@@ -345,7 +345,7 @@
 
         <div class="services-glow-grid">
           <!-- Web Dev -->
-          <a class="service-glow-card" href="web-development.html">
+          <a class="service-glow-card" href="web-development.php">
             <div class="card-glow-overlay"></div>
             <div class="service-card-content">
               <div class="service-icon">
@@ -362,7 +362,7 @@
           </a>
 
           <!-- CRM App with Web -->
-          <a class="service-glow-card" href="crm-dashboard.html">
+          <a class="service-glow-card" href="crm-dashboard.php">
             <div class="card-glow-overlay"></div>
             <div class="service-card-content">
               <div class="service-icon">
@@ -379,7 +379,7 @@
           </a>
 
           <!-- App Dev -->
-          <a class="service-glow-card" href="app-development.html">
+          <a class="service-glow-card" href="app-development.php">
             <div class="card-glow-overlay"></div>
             <div class="service-card-content">
               <div class="service-icon">
@@ -396,7 +396,7 @@
           </a>
 
           <!-- IVR Automation -->
-          <a class="service-glow-card" href="ivr-automation.html">
+          <a class="service-glow-card" href="ivr-automation.php">
             <div class="card-glow-overlay"></div>
             <div class="service-card-content">
               <div class="service-icon">
@@ -413,7 +413,7 @@
           </a>
 
           <!-- Billing Software -->
-          <a class="service-glow-card" href="billing-software.html">
+          <a class="service-glow-card" href="billing-software.php">
             <div class="card-glow-overlay"></div>
             <div class="service-card-content">
               <div class="service-icon">
@@ -430,7 +430,7 @@
           </a>
 
           <!-- Messaging Gateways -->
-          <a class="service-glow-card card-highlight" href="messenger-api.html">
+          <a class="service-glow-card card-highlight" href="messenger-api.php">
             <div class="card-glow-overlay"></div>
             <div class="service-card-content">
               <div class="service-icon">
@@ -539,7 +539,7 @@
               <li><b>Step 05</b><span>Deployment — zero-downtime DNS shift, SSL configuration</span></li>
               <li><b>Step 06</b><span>Handover — source code access, developer documentation</span></li>
             </ul>
-            <a class="btn btn--ghost" href="services.html">See full process &amp; rates
+            <a class="btn btn--ghost" href="services.php">See full process &amp; rates
               <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
                 <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                   stroke-linejoin="round" />
@@ -576,7 +576,7 @@
               <li><b>Frameworks</b><span>React, Next.js, Node.js, NestJS, FastAPI, Flutter</span></li>
               <li><b>Cloud / Ops</b><span>AWS, GCP, Docker, GitHub Actions, Terraform, Vercel</span></li>
             </ul>
-            <a class="btn btn--ghost" href="services.html">Explore our services
+            <a class="btn btn--ghost" href="services.php">Explore our services
               <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
                 <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                   stroke-linejoin="round" />
@@ -678,13 +678,13 @@
           product brief brewing for next quarter, the right time to send a note is now.
         </p>
         <div class="cta-row">
-          <a class="btn btn--dark btn--lg" href="contact.html">Start a project
+          <a class="btn btn--dark btn--lg" href="contact.php">Start a project
             <svg class="arrow" width="16" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
               <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
           </a>
-          <a class="btn btn--ghost btn--lg" href="services.html">See rates &amp; process</a>
+          <a class="btn btn--ghost btn--lg" href="services.php">See rates &amp; process</a>
         </div>
       </div>
     </section>
@@ -705,23 +705,23 @@
           <ul>
             <li></li>
             <li></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="services.html#rates">Rates</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="services.php#rates">Rates</a></li>
           </ul>
         </div>
         <div>
           <h4>Explore</h4>
           <ul>
-            <li><a href="d-r.html">D-R (Dream to Real)</a></li>
-            <li><a href="sales.html">Sales Solutions</a></li>
+            <li><a href="d-r.php">D-R (Dream to Real)</a></li>
+            <li><a href="sales.php">Sales Solutions</a></li>
           </ul>
         </div>
         <div>
           <h4>Connect</h4>
           <ul>
-            <li><a href="contact.html">Start a project</a></li>
-            <li><a href="contact.html#press">Press</a></li>
-            <li><a href="contact.html#careers">Careers</a></li>
+            <li><a href="contact.php">Start a project</a></li>
+            <li><a href="contact.php#press">Press</a></li>
+            <li><a href="contact.php#careers">Careers</a></li>
             <li><a href="#">Newsletter</a></li>
           </ul>
         </div>
@@ -730,9 +730,9 @@
         <span>© 2026 THE EXPERT HUB · Engineered for performance. Distributed by <a href="https://tehub.in/"
             target="_blank">The Expert Hub</a></span>
         <div class="footer-meta-links">
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-          <a href="sitemap.html">Sitemap</a>
+          <a href="privacy.php">Privacy</a>
+          <a href="terms.php">Terms</a>
+          <a href="sitemap.php">Sitemap</a>
         </div>
       </div>
     </div>
@@ -742,23 +742,23 @@
   <script src="assets/js/chatbot.js" defer></script>
   <!-- Mobile Bottom Navigation Bar (App View) -->
   <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
-    <a href="index.html" class="mobile-bottom-nav__item" aria-current="page">
+    <a href="index.php" class="mobile-bottom-nav__item" aria-current="page">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       <span class="mobile-bottom-nav__label">Home</span>
     </a>
-    <a href="d-r.html" class="mobile-bottom-nav__item">
+    <a href="d-r.php" class="mobile-bottom-nav__item">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
       <span class="mobile-bottom-nav__label">D-R</span>
     </a>
-    <a href="services.html" class="mobile-bottom-nav__item">
+    <a href="services.php" class="mobile-bottom-nav__item">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
       <span class="mobile-bottom-nav__label">Services</span>
     </a>
-    <a href="sales.html" class="mobile-bottom-nav__item">
+    <a href="sales.php" class="mobile-bottom-nav__item">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
       <span class="mobile-bottom-nav__label">Sales</span>
     </a>
-    <a href="contact.html" class="mobile-bottom-nav__item">
+    <a href="contact.php" class="mobile-bottom-nav__item">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       <span class="mobile-bottom-nav__label">Contact</span>
     </a>

@@ -122,14 +122,14 @@ if (!empty($client_email) && !empty($client_phone)) {
     if ($is_ajax) {
         echo json_encode(['status' => 'success', 'message' => 'Thank you! Your message has been sent successfully.']);
     } else {
-        header('Location: contact.html?status=success#intake');
+        header('Location: contact.php?status=success#intake');
         exit();
     }
 } else {
     if ($is_ajax) {
         echo json_encode(['status' => 'error', 'message' => 'Please provide a valid email address and mobile number.']);
     } else {
-        header('Location: contact.html?status=error#intake');
+        header('Location: contact.php?status=error#intake');
         exit();
     }
 }

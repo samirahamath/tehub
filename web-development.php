@@ -7,11 +7,11 @@
   <meta name="description" content="Custom React and Next.js web applications by THE EXPERT HUB. Specialized development for School Management Systems, E-Commerce engines, and MLM portals." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="THE EXPERT HUB" />
-  <link rel="canonical" href="https://tehub.in/web-development.html" />
+  <link rel="canonical" href="https://tehub.in/web-development.php" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Web Development Services — School, E-Commerce &amp; MLM | THE EXPERT HUB" />
   <meta property="og:description" content="Custom React and Next.js web applications by THE EXPERT HUB. Specialized development for School Management Systems, E-Commerce engines, and MLM portals." />
-  <meta property="og:url" content="https://tehub.in/web-development.html" />
+  <meta property="og:url" content="https://tehub.in/web-development.php" />
   <meta property="og:site_name" content="THE EXPERT HUB" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,16 +25,16 @@
   <header class="site-header">
     <div class="container container--wide">
       <nav class="nav" aria-label="Primary">
-        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</a>
+        <a class="brand" href="index.php"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</a>
         <div class="nav-links" role="navigation">
-          <a href="index.html">Index</a>
-          <a href="d-r.html">D-R</a>
-          <a href="services.html">Services</a>
-          <a href="sales.html">Sales</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.php">Index</a>
+          <a href="d-r.php">D-R</a>
+          <a href="services.php">Services</a>
+          <a href="sales.php">Sales</a>
+          <a href="contact.php">Contact</a>
         </div>
         <div class="nav-cta-row">
-          <a href="contact.html" class="btn btn--primary btn--sm">Start a project
+          <a href="contact.php" class="btn btn--primary btn--sm">Start a project
             <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -44,11 +44,11 @@
 
   <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
     <button class="drawer-close" aria-label="Close menu">Close</button>
-    <a href="index.html">Index</a>
-    <a href="d-r.html">D-R</a>
-    <a href="services.html">Services</a>
-    <a href="sales.html">Sales</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.php">Index</a>
+    <a href="d-r.php">D-R</a>
+    <a href="services.php">Services</a>
+    <a href="sales.php">Sales</a>
+    <a href="contact.php">Contact</a>
   </div>
 
   <main id="main">
@@ -67,7 +67,7 @@
               We design and construct high-performance web systems. Our specialists focus on complex, high-transaction web systems including automated School ERPs, e-commerce engines, and secure MLM platforms.
             </p>
             <div class="hero-cta-row">
-              <a class="btn btn--primary btn--lg" href="contact.html">Start your web project
+              <a class="btn btn--primary btn--lg" href="contact.php">Start your web project
                 <svg class="arrow" width="16" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
@@ -155,23 +155,23 @@
           <ul>
             <li></li>
             <li></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="services.html#rates">Rates</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="services.php#rates">Rates</a></li>
           </ul>
         </div>
         <div>
           <h4>Explore</h4>
           <ul>
-            <li><a href="d-r.html">D-R (Dream to Real)</a></li>
-            <li><a href="sales.html">Sales Solutions</a></li>
+            <li><a href="d-r.php">D-R (Dream to Real)</a></li>
+            <li><a href="sales.php">Sales Solutions</a></li>
           </ul>
         </div>
         <div>
           <h4>Connect</h4>
           <ul>
-            <li><a href="contact.html">Start a project</a></li>
-            <li><a href="contact.html#press">Press</a></li>
-            <li><a href="contact.html#careers">Careers</a></li>
+            <li><a href="contact.php">Start a project</a></li>
+            <li><a href="contact.php#press">Press</a></li>
+            <li><a href="contact.php#careers">Careers</a></li>
             <li><a href="#">Newsletter</a></li>
           </ul>
         </div>
@@ -180,9 +180,9 @@
         <span>© 2026 THE EXPERT HUB · Engineered for performance. Distributed by <a href="https://tehub.in/"
             target="_blank">The Expert Hub</a></span>
         <div class="footer-meta-links">
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-          <a href="sitemap.html">Sitemap</a>
+          <a href="privacy.php">Privacy</a>
+          <a href="terms.php">Terms</a>
+          <a href="sitemap.php">Sitemap</a>
         </div>
       </div>
     </div>
@@ -193,23 +193,23 @@
 
   <!-- Mobile Bottom Navigation Bar (App View) -->
   <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
-    <a href="index.html" class="mobile-bottom-nav__item">
+    <a href="index.php" class="mobile-bottom-nav__item">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       <span class="mobile-bottom-nav__label">Home</span>
     </a>
-    <a href="d-r.html" class="mobile-bottom-nav__item">
+    <a href="d-r.php" class="mobile-bottom-nav__item">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
       <span class="mobile-bottom-nav__label">D-R</span>
     </a>
-    <a href="services.html" class="mobile-bottom-nav__item">
+    <a href="services.php" class="mobile-bottom-nav__item">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
       <span class="mobile-bottom-nav__label">Services</span>
     </a>
-    <a href="sales.html" class="mobile-bottom-nav__item">
+    <a href="sales.php" class="mobile-bottom-nav__item">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
       <span class="mobile-bottom-nav__label">Sales</span>
     </a>
-    <a href="contact.html" class="mobile-bottom-nav__item">
+    <a href="contact.php" class="mobile-bottom-nav__item">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       <span class="mobile-bottom-nav__label">Contact</span>
     </a>
