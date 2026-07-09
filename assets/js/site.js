@@ -589,47 +589,79 @@
 
     loadQuickReplies();
 
+    let chatHistory = [];
+
+    function runLocalFallback(userInput) {
+      const cleanInput = userInput.toLowerCase().trim();
+      if (cleanInput === 'hi' || cleanInput === 'hello' || cleanInput === 'hey') {
+        const reply = "Hello there! How can I assist you with your business, website, or software needs today?";
+        addMessage(reply);
+        chatHistory.push({ text: reply, isUser: false });
+        return;
+      }
+
+      let bestMatch = null;
+      let highestScore = 0;
+
+      faqData.forEach(item => {
+        let score = 0;
+        item.keywords.forEach(keyword => {
+          if (cleanInput.includes(keyword)) {
+            score++;
+          }
+        });
+        if (score > highestScore) {
+          highestScore = score;
+          bestMatch = item;
+        }
+      });
+
+      let reply = "";
+      if (bestMatch && highestScore > 0) {
+        reply = formatResponse(bestMatch.answer);
+      } else {
+        reply = "I'm not entirely sure about that, but our team can help! You can send us an inquiry on our <a href='contact.php' style='color: var(--lime); text-decoration: underline;'>Contact page</a> or email hello@tehub.in.";
+      }
+      addMessage(reply);
+      chatHistory.push({ text: reply, isUser: false });
+    }
+
     function handleBotReply(userInput) {
       const indicator = showTypingIndicator();
-      const cleanInput = userInput.toLowerCase().trim();
 
-      setTimeout(() => {
+      fetch('chatbot_api.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userInput, history: chatHistory })
+      })
+      .then(res => res.json())
+      .then(data => {
         if (indicator && indicator.parentNode) {
           indicator.parentNode.removeChild(indicator);
         }
-
-        if (cleanInput === 'hi' || cleanInput === 'hello' || cleanInput === 'hey') {
-          addMessage("Hello there! How can I assist you with your business, website, or software needs today?");
-          return;
-        }
-
-        let bestMatch = null;
-        let highestScore = 0;
-
-        faqData.forEach(item => {
-          let score = 0;
-          item.keywords.forEach(keyword => {
-            if (cleanInput.includes(keyword)) {
-              score++;
-            }
-          });
-          if (score > highestScore) {
-            highestScore = score;
-            bestMatch = item;
-          }
-        });
-
-        if (bestMatch && highestScore > 0) {
-          addMessage(formatResponse(bestMatch.answer));
+        if (data.status === 'success') {
+          addMessage(data.reply);
+          chatHistory.push({ text: data.reply, isUser: false });
         } else {
-          addMessage("I'm not entirely sure about that, but our team can help! You can send us an inquiry on our <a href='contact.html' style='color: var(--lime); text-decoration: underline;'>Contact page</a> or email hello@tehub.in.");
+          runLocalFallback(userInput);
         }
-      }, 900);
+      })
+      .catch(() => {
+        if (indicator && indicator.parentNode) {
+          indicator.parentNode.removeChild(indicator);
+        }
+        runLocalFallback(userInput);
+      });
     }
 
     function handleUserMessage(text) {
       if (!text.trim()) return;
       addMessage(text, true);
+      chatHistory.push({ text: text, isUser: true });
+      if (chatHistory.length > 20) {
+        chatHistory.shift();
+        chatHistory.shift();
+      }
       handleBotReply(text);
     }
 
