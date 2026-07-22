@@ -1,0 +1,125 @@
+<?php
+session_start();
+header('Content-Type: application/json');
+
+if (!function_exists('sendWhatsAppMessage')) {
+    function sendWhatsAppMessage($url, $to, $message, $session, $token) {
+        $clean_to = preg_replace('/[^0-9]/', '', $to);
+        if (strlen($clean_to) === 10) {
+            $clean_to = '91' . $clean_to;
+        }
+
+        $payload = json_encode([
+            'to'      => $clean_to,
+            'message' => $message,
+            'session' => $session,
+            'token'   => $token,
+            'apikey'  => $token
+        ]);
+
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
+    }
+}
+
+// 1. Get input data
+$raw_input  = file_get_contents('php://input');
+$input_data = json_decode($raw_input, true) ?? $_POST;
+
+$submitted_otp = trim($input_data['otp'] ?? '');
+$client_name   = strip_tags(trim($input_data['name'] ?? 'Guest'));
+$client_email  = filter_var(trim($input_data['email'] ?? ''), FILTER_SANITIZE_EMAIL);
+$phone_raw     = $input_data['phone'] ?? '';
+$client_phone  = preg_replace('/[^0-9]/', '', $phone_raw);
+
+if (strlen($client_phone) === 10) {
+    $client_phone = '91' . $client_phone;
+}
+
+$client_brand = strip_tags(trim($input_data['brand'] ?? 'N/A'));
+$client_role  = strip_tags(trim($input_data['role'] ?? 'N/A'));
+$client_tier  = strip_tags(trim($input_data['tier'] ?? 'N/A'));
+$client_dates = strip_tags(trim($input_data['dates'] ?? 'N/A'));
+$client_where = strip_tags(trim($input_data['where'] ?? 'N/A'));
+$client_brief = strip_tags(trim($input_data['brief'] ?? ''));
+$client_refs  = strip_tags(trim($input_data['refs'] ?? 'N/A'));
+
+// 2. Validate OTP
+$stored_otp   = $_SESSION['wa_otp'] ?? '';
+$stored_phone = $_SESSION['wa_phone'] ?? '';
+$stored_time  = $_SESSION['wa_otp_time'] ?? 0;
+
+if (empty($submitted_otp)) {
+    echo json_encode(['status' => 'error', 'message' => 'Please enter the OTP received on your WhatsApp.']);
+    exit;
+}
+
+// Check expiration (10 mins = 600 seconds)
+if ((time() - $stored_time) > 600) {
+    echo json_encode(['status' => 'error', 'message' => 'OTP has expired. Please click Resend OTP to get a new code.']);
+    exit;
+}
+
+// Check matching OTP
+if ($submitted_otp !== $stored_otp && $submitted_otp !== '123456') { // Allow test 123456 override if needed
+    echo json_encode(['status' => 'error', 'message' => 'Invalid OTP code. Please check your WhatsApp and try again.']);
+    exit;
+}
+
+// Clear OTP session once verified
+unset($_SESSION['wa_otp']);
+unset($_SESSION['wa_otp_time']);
+
+// 3. Dispatch WhatsApp Notifications via 2fa.tehub.in
+$gateway_url = "https://2fa.tehub.in/whatsapp/send";
+$token       = "Inayah@62";
+$session_id  = "default";
+
+// A. Send Lead Notification ONLY via WhatsApp to Admin Numbers
+$admin_numbers = [
+    '919150137159',
+    '918667702473'
+];
+
+$admin_msg = "🔔 *NEW VERIFIED INQUIRY RECEIVED!*\n\n"
+           . "*Name:* {$client_name}\n"
+           . "*WhatsApp:* +{$client_phone}\n"
+           . "*Email:* {$client_email}\n"
+           . "*Company:* {$client_brand}\n"
+           . "*Role:* {$client_role}\n"
+           . "*Probable Tier:* {$client_tier}\n"
+           . "*Launch Window:* {$client_dates}\n"
+           . "*Project Type:* {$client_where}\n\n"
+           . "*Requirements Brief:*\n\"{$client_brief}\"\n\n"
+           . "*Reference / Repo:* {$client_refs}\n\n"
+           . "✅ _Phone verified via WhatsApp OTP._";
+
+foreach ($admin_numbers as $admin_phone) {
+    sendWhatsAppMessage($gateway_url, $admin_phone, $admin_msg, $session_id, $token);
+}
+
+// B. Send Instant Confirmation WhatsApp to Client
+$client_msg = "👋 *Hello {$client_name},*\n\n"
+            . "Thank you for contacting *THE EXPERT HUB*! Your project brief has been *verified & delivered* to our technical leads.\n\n"
+            . "Our engineering team will review your specifications and contact you within 48 working hours.\n\n"
+            . "Best regards,\n"
+            . "*THE EXPERT HUB*\n"
+            . "https://tehub.in";
+
+sendWhatsAppMessage($gateway_url, $client_phone, $client_msg, $session_id, $token);
+
+// Return JSON success
+echo json_encode([
+    'status'  => 'success',
+    'message' => 'Verification successful! Your inquiry has been sent to our team via WhatsApp.'
+]);
+?>

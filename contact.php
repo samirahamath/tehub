@@ -156,23 +156,22 @@
           </p>
         </div>
 
-        <form class="form-card"
-          onsubmit="event.preventDefault(); this.querySelector('button[type=submit]').textContent='Thank you — we will be in touch.';">
+        <form class="form-card" id="contact-form">
           <div class="form-row">
             <div class="form-field">
-              <label for="f-name">Your name</label>
+              <label for="f-name">Your name *</label>
               <input id="f-name" name="name" type="text" required placeholder="Mira Halden" />
             </div>
             <div class="form-field">
-              <label for="f-brand">Company / startup</label>
-              <input id="f-brand" name="brand" type="text" placeholder="Atrium · Lisbon" />
+              <label for="f-email">Email *</label>
+              <input id="f-email" name="email" type="email" required placeholder="mira@atrium.studio" />
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-field">
-              <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" required placeholder="mira @ atrium.studio" />
+              <label for="f-phone">WhatsApp Mobile Number *</label>
+              <input id="f-phone" name="phone" type="tel" required placeholder="9876543210 or +91 98765 43210" />
             </div>
             <div class="form-field">
               <label for="f-role">Your role</label>
@@ -182,6 +181,10 @@
 
           <div class="form-row">
             <div class="form-field">
+              <label for="f-brand">Company / startup</label>
+              <input id="f-brand" name="brand" type="text" placeholder="Atrium · Lisbon" />
+            </div>
+            <div class="form-field">
               <label for="f-tier">Probable tier</label>
               <select id="f-tier" name="tier">
                 <option>MVP &amp; Automation — prototyping / script setup</option>
@@ -190,13 +193,13 @@
                 <option>Not sure — please advise</option>
               </select>
             </div>
+          </div>
+
+          <div class="form-row">
             <div class="form-field">
               <label for="f-dates">Desired launch window</label>
               <input id="f-dates" name="dates" type="text" placeholder="Mid-March, 2-month build" />
             </div>
-          </div>
-
-          <div class="form-row form-row--full">
             <div class="form-field">
               <label for="f-where">Project Type</label>
               <input id="f-where" name="where" type="text"
@@ -206,7 +209,7 @@
 
           <div class="form-row form-row--full">
             <div class="form-field">
-              <label for="f-brief">The requirements — one paragraph</label>
+              <label for="f-brief">The requirements — one paragraph *</label>
               <textarea id="f-brief" name="brief" required
                 placeholder="What is the project, what databases do you use, what third-party APIs need to be integrated? Bullet points are fine."></textarea>
             </div>
@@ -220,8 +223,8 @@
           </div>
 
           <div class="form-actions">
-            <small>By submitting, you agree we will reply to the email above. No marketing spam. No third-party sharing.</small>
-            <button type="submit" class="btn btn--primary btn--lg">Send first note
+            <small>By submitting, you agree to WhatsApp OTP verification. No marketing spam.</small>
+            <button type="submit" id="btn-submit-brief" class="btn btn--primary btn--lg">Verify &amp; Send Brief
               <svg class="arrow" width="16" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
                 <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                   stroke-linejoin="round" />
@@ -229,6 +232,46 @@
             </button>
           </div>
         </form>
+
+        <div id="form-success-message" style="display: none; background: rgba(212, 255, 61, 0.08); border: 1px solid var(--lime); border-radius: var(--radius-md); padding: var(--space-7); text-align: center; margin-top: var(--space-6);">
+          <div style="font-size: 40px; margin-bottom: 12px;">✅</div>
+          <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); margin-bottom: 8px;">Brief Verified &amp; Sent!</h3>
+          <p style="color: var(--fg-soft); max-width: 50ch; margin: 0 auto 16px; font-size: var(--text-md);">
+            We have sent a WhatsApp confirmation to your mobile. Our lead architect will review your brief and contact you within 48 working hours.
+          </p>
+          <a href="index.php" class="btn btn--primary btn--sm">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp OTP Modal Overlay -->
+    <div id="otp-modal-overlay" style="display: none; position: fixed; inset: 0; background: rgba(10, 10, 12, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 10000; align-items: center; justify-content: center; padding: 20px;">
+      <div style="background: var(--bg-alt); border: 1px solid var(--lime); border-radius: 20px; max-width: 440px; width: 100%; padding: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); position: relative;">
+        <button id="otp-modal-close" style="position: absolute; top: 16px; right: 16px; background: transparent; border: none; color: var(--fg-mute); font-size: 20px; cursor: pointer;">✕</button>
+        
+        <div style="text-align: center; margin-bottom: 24px;">
+          <div style="width: 56px; height: 56px; background: rgba(212,255,61,0.1); border: 1px solid rgba(212,255,61,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px;">🔐</div>
+          <h3 style="font-family: var(--font-display); font-size: var(--text-xl); margin-bottom: 8px; color: var(--fg);">WhatsApp Verification</h3>
+          <p style="font-size: var(--text-xs); color: var(--fg-soft); line-height: 1.5;">
+            We've sent a 6-digit OTP code to your WhatsApp number <strong id="otp-target-phone" style="color: var(--lime);">+91 XXXXX XXXXX</strong>.
+          </p>
+        </div>
+
+        <div id="otp-alert-box" style="display: none; padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 16px; text-align: center;"></div>
+
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-mute); margin-bottom: 8px; text-align: center;">Enter 6-Digit OTP Code</label>
+          <input type="text" id="otp-code-input" maxlength="6" placeholder="0 0 0 0 0 0" style="width: 100%; height: 56px; background: var(--bg); border: 1px solid var(--rule); border-radius: 12px; color: var(--lime); font-family: var(--font-mono); font-size: 24px; font-weight: 700; text-align: center; letter-spacing: 0.3em; outline: none; transition: border-color 0.2s;" />
+        </div>
+
+        <button id="btn-verify-otp" class="btn btn--primary btn--lg" style="width: 100%; justify-content: center; margin-bottom: 12px;">Verify &amp; Submit Inquiry →</button>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; font-size: 12px; font-family: var(--font-mono);">
+          <button id="btn-resend-otp" style="background: none; border: none; color: var(--lime); cursor: pointer; text-decoration: underline; padding: 0;">Resend OTP</button>
+          <button id="btn-edit-phone" style="background: none; border: none; color: var(--fg-mute); cursor: pointer; text-decoration: underline; padding: 0;">Change Phone Number</button>
+        </div>
+      </div>
+    </div>
       </div>
     </section>
 
@@ -397,6 +440,170 @@
       <span class="mobile-bottom-nav__label">Contact</span>
     </a>
   </nav>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    const otpModalOverlay = document.getElementById('otp-modal-overlay');
+    const otpModalClose = document.getElementById('otp-modal-close');
+    const otpTargetPhone = document.getElementById('otp-target-phone');
+    const otpCodeInput = document.getElementById('otp-code-input');
+    const btnVerifyOtp = document.getElementById('btn-verify-otp');
+    const btnResendOtp = document.getElementById('btn-resend-otp');
+    const btnEditPhone = document.getElementById('btn-edit-phone');
+    const otpAlertBox = document.getElementById('otp-alert-box');
+    const formSuccessMessage = document.getElementById('form-success-message');
+    const btnSubmitBrief = document.getElementById('btn-submit-brief');
+
+    let formDataCache = {};
+
+    function showAlert(msg, isError) {
+      otpAlertBox.style.display = 'block';
+      otpAlertBox.style.background = isError ? 'rgba(255, 74, 74, 0.15)' : 'rgba(212, 255, 61, 0.15)';
+      otpAlertBox.style.color = isError ? '#ff4a4a' : 'var(--lime)';
+      otpAlertBox.style.border = isError ? '1px solid rgba(255, 74, 74, 0.3)' : '1px solid rgba(212, 255, 61, 0.3)';
+      otpAlertBox.textContent = msg;
+    }
+
+    function hideAlert() {
+      otpAlertBox.style.display = 'none';
+    }
+
+    // 1. Submit Form -> Trigger OTP
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('f-name').value.trim();
+        const email = document.getElementById('f-email').value.trim();
+        const phone = document.getElementById('f-phone').value.trim();
+        const brief = document.getElementById('f-brief').value.trim();
+
+        if (!name || !email || !phone || !brief) {
+          alert('Please fill out all required fields (*).');
+          return;
+        }
+
+        formDataCache = {
+          name: name,
+          email: email,
+          phone: phone,
+          brand: document.getElementById('f-brand').value.trim(),
+          role: document.getElementById('f-role').value.trim(),
+          tier: document.getElementById('f-tier').value,
+          dates: document.getElementById('f-dates').value.trim(),
+          where: document.getElementById('f-where').value.trim(),
+          brief: brief,
+          refs: document.getElementById('f-refs').value.trim()
+        };
+
+        btnSubmitBrief.disabled = true;
+        btnSubmitBrief.textContent = 'Sending OTP to WhatsApp...';
+
+        fetch('send_otp.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name, phone: phone })
+        })
+        .then(res => res.json())
+        .then(data => {
+          btnSubmitBrief.disabled = false;
+          btnSubmitBrief.innerHTML = 'Verify &amp; Send Brief <svg class="arrow" width="16" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>';
+
+          if (data.status === 'success') {
+            otpTargetPhone.textContent = data.phone || phone;
+            otpCodeInput.value = '';
+            hideAlert();
+            otpModalOverlay.style.display = 'flex';
+            setTimeout(() => otpCodeInput.focus(), 100);
+          } else {
+            alert(data.message || 'Could not send OTP. Please check your mobile number.');
+          }
+        })
+        .catch(err => {
+          btnSubmitBrief.disabled = false;
+          btnSubmitBrief.innerHTML = 'Verify &amp; Send Brief';
+          alert('Connection error. Please try again.');
+        });
+      });
+    }
+
+    // 2. Verify OTP
+    if (btnVerifyOtp) {
+      btnVerifyOtp.addEventListener('click', function() {
+        const otp = otpCodeInput.value.trim();
+        if (!otp || otp.length < 4) {
+          showAlert('Please enter the 6-digit OTP code sent to your WhatsApp.', true);
+          return;
+        }
+
+        btnVerifyOtp.disabled = true;
+        btnVerifyOtp.textContent = 'Verifying...';
+
+        const payload = Object.assign({}, formDataCache, { otp: otp });
+
+        fetch('verify_otp.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+        .then(res => res.json())
+        .then(data => {
+          btnVerifyOtp.disabled = false;
+          btnVerifyOtp.textContent = 'Verify & Submit Inquiry →';
+
+          if (data.status === 'success') {
+            otpModalOverlay.style.display = 'none';
+            contactForm.style.display = 'none';
+            formSuccessMessage.style.display = 'block';
+            formSuccessMessage.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            showAlert(data.message || 'Invalid OTP code. Please try again.', true);
+          }
+        })
+        .catch(err => {
+          btnVerifyOtp.disabled = false;
+          btnVerifyOtp.textContent = 'Verify & Submit Inquiry →';
+          showAlert('Verification failed. Please try again.', true);
+        });
+      });
+    }
+
+    // Resend OTP
+    if (btnResendOtp) {
+      btnResendOtp.addEventListener('click', function() {
+        btnResendOtp.disabled = true;
+        btnResendOtp.textContent = 'Sending...';
+
+        fetch('send_otp.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: formDataCache.name, phone: formDataCache.phone })
+        })
+        .then(res => res.json())
+        .then(data => {
+          btnResendOtp.disabled = false;
+          btnResendOtp.textContent = 'Resend OTP';
+          showAlert('New OTP sent to your WhatsApp!', false);
+        });
+      });
+    }
+
+    // Edit Phone
+    if (btnEditPhone) {
+      btnEditPhone.addEventListener('click', function() {
+        otpModalOverlay.style.display = 'none';
+        document.getElementById('f-phone').focus();
+      });
+    }
+
+    if (otpModalClose) {
+      otpModalClose.addEventListener('click', function() {
+        otpModalOverlay.style.display = 'none';
+      });
+    }
+  });
+  </script>
 </body>
 
 </html>
