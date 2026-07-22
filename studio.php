@@ -26,7 +26,7 @@
           <a href="index.php">Index</a>
           <a href="d-r.php">D-R</a>
           <a href="services.php">Services</a>
-          <a href="sales.php">Sales</a>
+          <a href="solutions.php">Solutions</a>
           <a href="contact.php">Contact</a>
         </div>
         <div class="nav-cta-row">
@@ -48,7 +48,7 @@
     <a href="index.php">Index</a>
     <a href="d-r.php">D-R</a>
     <a href="services.php">Services</a>
-    <a href="sales.php">Sales</a>
+    <a href="solutions.php">Solutions</a>
     <a href="contact.php">Contact</a>
   </div>
 

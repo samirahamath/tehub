@@ -34,7 +34,7 @@
           <a href="index.php">Index</a>
           <a href="d-r.php">D-R</a>
           <a href="services.php">Services</a>
-          <a href="sales.php">Sales</a>
+          <a href="solutions.php">Solutions</a>
           <a href="contact.php" aria-current="page">Contact</a>
         </div>
         <div class="nav-cta-row">
@@ -56,7 +56,7 @@
     <a href="index.php">Index</a>
     <a href="d-r.php">D-R</a>
     <a href="services.php">Services</a>
-    <a href="sales.php">Sales</a>
+    <a href="solutions.php">Solutions</a>
     <a href="contact.php">Contact</a>
   </div>
 
@@ -346,7 +346,7 @@
           <h4>Explore</h4>
           <ul>
             <li><a href="d-r.php">D-R (Dream to Real)</a></li>
-            <li><a href="sales.php">Sales Solutions</a></li>
+            <li><a href="solutions.php">Solutions</a></li>
           </ul>
         </div>
         <div>
@@ -388,9 +388,9 @@
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
       <span class="mobile-bottom-nav__label">Services</span>
     </a>
-    <a href="sales.php" class="mobile-bottom-nav__item">
+    <a href="solutions.php" class="mobile-bottom-nav__item">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-      <span class="mobile-bottom-nav__label">Sales</span>
+      <span class="mobile-bottom-nav__label">Solutions</span>
     </a>
     <a href="contact.php" class="mobile-bottom-nav__item" aria-current="page">
       <svg class="mobile-bottom-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
