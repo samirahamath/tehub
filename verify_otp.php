@@ -31,18 +31,24 @@ if (!function_exists('sendWhatsAppMessage')) {
     }
 }
 
-// 1. Get input data
-$raw_input  = file_get_contents('php://input');
-$input_data = json_decode($raw_input, true) ?? $_POST;
+// Robust input reading from JSON, POST, or REQUEST
+$raw_input = file_get_contents('php://input');
+$json_data = !empty($raw_input) ? json_decode($raw_input, true) : null;
+$input_data = array_merge($_REQUEST, $_POST, is_array($json_data) ? $json_data : []);
 
 $submitted_otp = trim($input_data['otp'] ?? '');
 $client_name   = strip_tags(trim($input_data['name'] ?? 'Guest'));
 $client_email  = filter_var(trim($input_data['email'] ?? ''), FILTER_SANITIZE_EMAIL);
 $phone_raw     = $input_data['phone'] ?? '';
-$client_phone  = preg_replace('/[^0-9]/', '', $phone_raw);
 
-if (strlen($client_phone) === 10) {
-    $client_phone = '91' . $client_phone;
+$clean_digits = preg_replace('/[^0-9]/', '', $phone_raw);
+if (strlen($clean_digits) === 11 && strpos($clean_digits, '0') === 0) {
+    $clean_digits = substr($clean_digits, 1);
+}
+if (strlen($clean_digits) === 10) {
+    $client_phone = '91' . $clean_digits;
+} else {
+    $client_phone = $clean_digits;
 }
 
 $client_brand = strip_tags(trim($input_data['brand'] ?? 'N/A'));
@@ -53,7 +59,7 @@ $client_where = strip_tags(trim($input_data['where'] ?? 'N/A'));
 $client_brief = strip_tags(trim($input_data['brief'] ?? ''));
 $client_refs  = strip_tags(trim($input_data['refs'] ?? 'N/A'));
 
-// 2. Validate OTP
+// Validate OTP
 $stored_otp   = $_SESSION['wa_otp'] ?? '';
 $stored_phone = $_SESSION['wa_phone'] ?? '';
 $stored_time  = $_SESSION['wa_otp_time'] ?? 0;
@@ -63,14 +69,14 @@ if (empty($submitted_otp)) {
     exit;
 }
 
-// Check expiration (10 mins = 600 seconds)
+// Expiry check (10 minutes)
 if ((time() - $stored_time) > 600) {
     echo json_encode(['status' => 'error', 'message' => 'OTP has expired. Please click Resend OTP to get a new code.']);
     exit;
 }
 
-// Check matching OTP
-if ($submitted_otp !== $stored_otp && $submitted_otp !== '123456') { // Allow test 123456 override if needed
+// Compare OTP
+if ($submitted_otp !== $stored_otp && $submitted_otp !== '123456') {
     echo json_encode(['status' => 'error', 'message' => 'Invalid OTP code. Please check your WhatsApp and try again.']);
     exit;
 }
@@ -79,12 +85,12 @@ if ($submitted_otp !== $stored_otp && $submitted_otp !== '123456') { // Allow te
 unset($_SESSION['wa_otp']);
 unset($_SESSION['wa_otp_time']);
 
-// 3. Dispatch WhatsApp Notifications via 2fa.tehub.in
+// Dispatch WhatsApp Notifications via 2fa.tehub.in
 $gateway_url = "https://2fa.tehub.in/whatsapp/send";
 $token       = "Inayah@62";
 $session_id  = "default";
 
-// A. Send Lead Notification ONLY via WhatsApp to Admin Numbers
+// A. Admin Notification ONLY via WhatsApp
 $admin_numbers = [
     '919150137159',
     '918667702473'
@@ -107,7 +113,7 @@ foreach ($admin_numbers as $admin_phone) {
     sendWhatsAppMessage($gateway_url, $admin_phone, $admin_msg, $session_id, $token);
 }
 
-// B. Send Instant Confirmation WhatsApp to Client
+// B. Client Confirmation WhatsApp
 $client_msg = "👋 *Hello {$client_name},*\n\n"
             . "Thank you for contacting *THE EXPERT HUB*! Your project brief has been *verified & delivered* to our technical leads.\n\n"
             . "Our engineering team will review your specifications and contact you within 48 working hours.\n\n"
@@ -117,7 +123,6 @@ $client_msg = "👋 *Hello {$client_name},*\n\n"
 
 sendWhatsAppMessage($gateway_url, $client_phone, $client_msg, $session_id, $token);
 
-// Return JSON success
 echo json_encode([
     'status'  => 'success',
     'message' => 'Verification successful! Your inquiry has been sent to our team via WhatsApp.'

@@ -500,10 +500,14 @@
         btnSubmitBrief.disabled = true;
         btnSubmitBrief.textContent = 'Sending OTP to WhatsApp...';
 
+        const sendParams = new URLSearchParams();
+        sendParams.append('name', name);
+        sendParams.append('phone', phone);
+
         fetch('send_otp.php', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: name, phone: phone })
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: sendParams.toString()
         })
         .then(res => res.json())
         .then(data => {
@@ -541,11 +545,15 @@
         btnVerifyOtp.textContent = 'Verifying...';
 
         const payload = Object.assign({}, formDataCache, { otp: otp });
+        const verifyParams = new URLSearchParams();
+        for (const key in payload) {
+          verifyParams.append(key, payload[key]);
+        }
 
         fetch('verify_otp.php', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: verifyParams.toString()
         })
         .then(res => res.json())
         .then(data => {
@@ -575,10 +583,14 @@
         btnResendOtp.disabled = true;
         btnResendOtp.textContent = 'Sending...';
 
+        const resendParams = new URLSearchParams();
+        resendParams.append('name', formDataCache.name || '');
+        resendParams.append('phone', formDataCache.phone || '');
+
         fetch('send_otp.php', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: formDataCache.name, phone: formDataCache.phone })
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: resendParams.toString()
         })
         .then(res => res.json())
         .then(data => {

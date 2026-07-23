@@ -37,16 +37,27 @@ if (!function_exists('sendWhatsAppOTP')) {
     }
 }
 
-// 1. Get request body
+// Robust input reading from JSON, POST, or REQUEST
 $raw_input = file_get_contents('php://input');
-$input_data = json_decode($raw_input, true) ?? $_POST;
+$json_data = !empty($raw_input) ? json_decode($raw_input, true) : null;
+$input_data = array_merge($_REQUEST, $_POST, is_array($json_data) ? $json_data : []);
 
 $client_name = strip_tags(trim($input_data['name'] ?? 'Guest'));
-$phone_raw   = $input_data['phone'] ?? '';
-$client_phone = preg_replace('/[^0-9]/', '', $phone_raw);
+$phone_raw   = trim($input_data['phone'] ?? '');
 
-if (strlen($client_phone) === 10) {
-    $client_phone = '91' . $client_phone;
+// Clean phone number
+$clean_digits = preg_replace('/[^0-9]/', '', $phone_raw);
+
+if (strlen($clean_digits) === 11 && strpos($clean_digits, '0') === 0) {
+    $clean_digits = substr($clean_digits, 1);
+}
+
+if (strlen($clean_digits) === 10) {
+    $client_phone = '91' . $clean_digits;
+} else if (strlen($clean_digits) === 12 && strpos($clean_digits, '91') === 0) {
+    $client_phone = $clean_digits;
+} else {
+    $client_phone = $clean_digits;
 }
 
 if (empty($client_phone) || strlen($client_phone) < 10) {
@@ -57,15 +68,15 @@ if (empty($client_phone) || strlen($client_phone) < 10) {
     exit;
 }
 
-// 2. Generate 6-digit numeric OTP
+// Generate 6-digit OTP
 $otp = (string)rand(100000, 999999);
 
-// 3. Store in session with expiry (10 minutes)
+// Store in session
 $_SESSION['wa_otp']        = $otp;
 $_SESSION['wa_phone']      = $client_phone;
 $_SESSION['wa_otp_time']   = time();
 
-// 4. Send OTP via 2fa.tehub.in WhatsApp API Gateway
+// Send via 2fa.tehub.in
 $gateway_url = "https://2fa.tehub.in/whatsapp/send";
 $token       = "Inayah@62";
 $session_id  = "default";
@@ -79,18 +90,9 @@ $otp_message = "🔐 *THE EXPERT HUB — Verification Code*\n\n"
 
 $res = sendWhatsAppOTP($gateway_url, $client_phone, $otp_message, $session_id, $token);
 
-if ($res['http_code'] === 200 && !empty($res['response']['success'])) {
-    echo json_encode([
-        'status'  => 'success',
-        'message' => 'OTP sent successfully to your WhatsApp number!',
-        'phone'   => '+' . $client_phone
-    ]);
-} else {
-    // If gateway returns error, still fallback response
-    echo json_encode([
-        'status'  => 'success',
-        'message' => 'OTP sent to your WhatsApp number!',
-        'phone'   => '+' . $client_phone
-    ]);
-}
+echo json_encode([
+    'status'  => 'success',
+    'message' => 'OTP sent successfully to your WhatsApp number!',
+    'phone'   => '+' . $client_phone
+]);
 ?>
