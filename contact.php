@@ -504,7 +504,7 @@
         sendParams.append('name', name);
         sendParams.append('phone', phone);
 
-        fetch('send_otp.php', {
+        fetch('send_otp', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: sendParams.toString()
@@ -550,7 +550,7 @@
           verifyParams.append(key, payload[key]);
         }
 
-        fetch('verify_otp.php', {
+        fetch('verify_otp', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: verifyParams.toString()
@@ -587,7 +587,7 @@
         resendParams.append('name', formDataCache.name || '');
         resendParams.append('phone', formDataCache.phone || '');
 
-        fetch('send_otp.php', {
+        fetch('send_otp', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: resendParams.toString()
