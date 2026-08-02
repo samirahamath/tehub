@@ -97,8 +97,32 @@ if (!empty($client_email) && !empty($client_phone)) {
                              . "Best regards,\n"
                              . "*THE EXPERT HUB*";
 
-    sendWhatsAppMessage($gateway_url, $client_phone, $client_whatsapp_message, $session_id, $token);
+    // Save request to client_requests.json for Admin Dashboard
+    $requestsFile = __DIR__ . '/client_requests.json';
+    $existing_requests = [];
+    if (file_exists($requestsFile)) {
+        $existing_requests = @json_decode(@file_get_contents($requestsFile), true) ?? [];
+    }
 
+    $request_entry = [
+        'id'        => 'req_' . uniqid(),
+        'name'      => $client_name,
+        'phone'     => $client_phone,
+        'email'     => $client_email,
+        'brand'     => strip_tags(trim($_POST['brand'] ?? 'N/A')),
+        'role'      => strip_tags(trim($_POST['role'] ?? 'N/A')),
+        'tier'      => strip_tags(trim($_POST['tier'] ?? 'N/A')),
+        'dates'     => strip_tags(trim($_POST['dates'] ?? 'N/A')),
+        'where'     => strip_tags(trim($_POST['where'] ?? 'N/A')),
+        'brief'     => $client_query,
+        'refs'      => strip_tags(trim($_POST['refs'] ?? 'N/A')),
+        'status'    => 'Direct Contact',
+        'timestamp' => date('Y-m-d H:i:s'),
+        'ip'        => $_SERVER['REMOTE_ADDR'] ?? 'Unknown'
+    ];
+
+    array_unshift($existing_requests, $request_entry);
+    @file_put_contents($requestsFile, json_encode($existing_requests, JSON_PRETTY_PRINT));
 
     // ────────────────────────────────────────────────────────
     // PART C: SEND LEADS REPORT TO ADMIN NUMBERS (2 NUMBERS)

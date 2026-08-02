@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Kolkata');
 header('Content-Type: application/json');
 
 if (!function_exists('sendWhatsAppMessage')) {
@@ -85,7 +86,34 @@ if ($submitted_otp !== $stored_otp && $submitted_otp !== '123456') {
 unset($_SESSION['wa_otp']);
 unset($_SESSION['wa_otp_time']);
 
-// Dispatch WhatsApp Notifications via 2fa.tehub.in
+// 1. SAVE CLIENT REQUEST TO client_requests.json FOR ADMIN DASHBOARD
+$requestsFile = __DIR__ . '/client_requests.json';
+$existing_requests = [];
+if (file_exists($requestsFile)) {
+    $existing_requests = @json_decode(@file_get_contents($requestsFile), true) ?? [];
+}
+
+$request_entry = [
+    'id'        => 'req_' . uniqid(),
+    'name'      => $client_name,
+    'phone'     => $client_phone,
+    'email'     => $client_email,
+    'brand'     => $client_brand,
+    'role'      => $client_role,
+    'tier'      => $client_tier,
+    'dates'     => $client_dates,
+    'where'     => $client_where,
+    'brief'     => $client_brief,
+    'refs'      => $client_refs,
+    'status'    => 'OTP Verified',
+    'timestamp' => date('Y-m-d H:i:s'),
+    'ip'        => $_SERVER['REMOTE_ADDR'] ?? 'Unknown'
+];
+
+array_unshift($existing_requests, $request_entry);
+@file_put_contents($requestsFile, json_encode($existing_requests, JSON_PRETTY_PRINT));
+
+// 2. DISPATCH WHATSAPP NOTIFICATIONS VIA 2fa.tehub.in
 $gateway_url = "https://2fa.tehub.in/whatsapp/send";
 $token       = "Inayah@62";
 $session_id  = "default";
