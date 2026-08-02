@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/visitor_logger.php';
+
 $db_host = 'localhost';
 $db_name = 'shacartc_expert';
 $db_user = 'shacartc_expert';

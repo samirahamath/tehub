@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/visitor_logger.php'; ?>
 <!doctype html>
 <html lang="en">
 
