@@ -3,7 +3,7 @@ session_start();
 date_default_timezone_set('Asia/Kolkata');
 
 // Simple Password Protection
-$admin_pass = 'Inayah@62'; // Set your admin password
+$admin_pass = 'Inayah@62';
 
 if (isset($_POST['password'])) {
     if ($_POST['password'] === $admin_pass) {
@@ -15,7 +15,7 @@ if (isset($_POST['password'])) {
 
 if (isset($_GET['action']) && $_GET['action'] === 'logout') {
     unset($_SESSION['admin_logged_in']);
-    header("Location: visitors.php");
+    header("Location: visitors");
     exit;
 }
 
@@ -35,13 +35,24 @@ if (file_exists($logFile)) {
     $logs = @json_decode($json_content, true) ?? [];
 }
 
+// Helper function to format duration seconds to human-readable string
+function formatDuration($seconds) {
+    if ($seconds <= 0) return '0s (Just Landed)';
+    if ($seconds < 60) return $seconds . 's';
+    $m = floor($seconds / 60);
+    $s = $seconds % 60;
+    return $m . 'm ' . $s . 's';
+}
+
 // Calculate Stats
 $total_views = count($logs);
 $unique_ips = count(array_unique(array_column($logs, 'ip')));
 $mobile_count = 0;
 $desktop_count = 0;
 $today_count = 0;
+$active_now_count = 0;
 $today_str = date('Y-m-d');
+$now_time = time();
 
 foreach ($logs as $l) {
     if (($l['device'] ?? '') === 'Mobile') $mobile_count++;
@@ -50,19 +61,26 @@ foreach ($logs as $l) {
     if (strpos($l['timestamp'] ?? '', $today_str) === 0) {
         $today_count++;
     }
+
+    $last_active = $l['last_active'] ?? 0;
+    if (($now_time - $last_active) <= 15) {
+        $active_now_count++;
+    }
 }
 
 // Handle Export CSV
 if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv') {
     header('Content-Type: text/csv');
-    header('Content-Disposition: attachment; filename="visitor_logs_' . date('Ymd_His') . '.csv"');
+    header('Content-Disposition: attachment; filename="visitor_analytics_' . date('Ymd_His') . '.csv"');
     $out = fopen('php://output', 'w');
-    fputcsv($out, ['ID', 'IP Address', 'Page Visited', 'Device', 'User Agent', 'Referrer', 'Timestamp (IST)']);
+    fputcsv($out, ['ID', 'IP Address', 'Location Name', 'Page Visited', 'Time Spent (Sec)', 'Device', 'User Agent', 'Referrer', 'Timestamp (IST)']);
     foreach ($logs as $row) {
         fputcsv($out, [
             $row['id'] ?? '',
             $row['ip'] ?? '',
+            $row['location'] ?? 'Unknown Location',
             $row['page'] ?? '',
+            $row['duration'] ?? 0,
             $row['device'] ?? '',
             $row['user_agent'] ?? '',
             $row['referrer'] ?? '',
@@ -78,7 +96,7 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Visitor IP Analytics Dashboard — THE EXPERT HUB</title>
+  <title>Visitor Analytics & IP Tracker — THE EXPERT HUB</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
@@ -92,7 +110,7 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
       margin: 0;
     }
     .admin-container {
-      max-width: 1300px;
+      max-width: 1380px;
       margin: 0 auto;
       padding: 40px 20px;
     }
@@ -116,7 +134,7 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
     }
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 16px;
       margin-bottom: 30px;
     }
@@ -128,16 +146,31 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
     }
     .stat-card strong {
       display: block;
-      font-size: 32px;
+      font-size: 30px;
       font-family: 'Geist Mono', monospace;
       color: #d4ff3d;
       margin-bottom: 4px;
     }
     .stat-card span {
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: #888;
+    }
+    .active-pulse {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      margin-right: 6px;
+      box-shadow: 0 0 10px #22c55e;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
     }
     .table-card {
       background: #141418;
@@ -162,12 +195,10 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
       padding: 8px 14px;
       border-radius: 8px;
       font-size: 14px;
-      width: 280px;
+      width: 320px;
       outline: none;
     }
-    .search-input:focus {
-      border-color: #d4ff3d;
-    }
+    .search-input:focus { border-color: #d4ff3d; }
     .logs-table {
       width: 100%;
       border-collapse: collapse;
@@ -189,14 +220,10 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
       border-bottom: 1px solid rgba(255,255,255,0.05);
       color: #ccc;
     }
-    .logs-table tr:hover td {
-      background: rgba(212, 255, 61, 0.03);
-    }
-    .ip-badge {
-      font-family: 'Geist Mono', monospace;
-      color: #d4ff3d;
-      font-weight: 600;
-    }
+    .logs-table tr:hover td { background: rgba(212, 255, 61, 0.03); }
+    .ip-badge { font-family: 'Geist Mono', monospace; color: #d4ff3d; font-weight: 600; }
+    .location-badge { color: #fff; font-weight: 500; }
+    .duration-badge { font-family: 'Geist Mono', monospace; font-weight: 600; color: #d4ff3d; }
     .device-badge {
       display: inline-block;
       padding: 2px 8px;
@@ -251,8 +278,8 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
 
 <?php if (!$is_logged_in): ?>
   <div class="login-modal">
-    <h2>🔒 Visitor IP Analytics</h2>
-    <p style="color: #888; font-size: 13px;">Enter admin password to view live visitor logs.</p>
+    <h2>🔒 Visitor Analytics Login</h2>
+    <p style="color: #888; font-size: 13px;">Enter admin password to view live visitor IP, location & time spent.</p>
     <?php if (isset($login_error)): ?>
       <div style="color: #ff4a4a; font-size: 13px; margin-bottom: 10px;"><?php echo $login_error; ?></div>
     <?php endif; ?>
@@ -266,12 +293,12 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
   <div class="admin-container">
     <div class="admin-header">
       <div class="admin-title">
-        <h1>👁️ Live Visitor IP Analytics</h1>
-        <p>Real-time visitor IP tracking for <strong>tehub.in</strong></p>
+        <h1>👁️ Visitor Location, IP &amp; Time Analytics</h1>
+        <p>Live tracking of visitor location, page visited, IP address &amp; exact time spent on <strong>tehub.in</strong></p>
       </div>
       <div style="display: flex; gap: 10px;">
-        <a href="visitors.php?action=export_csv" class="btn-admin">📥 Export CSV</a>
-        <a href="visitors.php?action=logout" class="btn-admin" style="background: rgba(255,255,255,0.1); color: #fff;">Logout</a>
+        <a href="visitors?action=export_csv" class="btn-admin">📥 Export CSV</a>
+        <a href="visitors?action=logout" class="btn-admin" style="background: rgba(255,255,255,0.1); color: #fff;">Logout</a>
       </div>
     </div>
 
@@ -282,6 +309,10 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
     <?php endif; ?>
 
     <div class="stats-grid">
+      <div class="stat-card">
+        <strong style="color: #22c55e;"><span class="active-pulse"></span><?php echo number_format($active_now_count); ?></strong>
+        <span>Active Now (Online)</span>
+      </div>
       <div class="stat-card">
         <strong><?php echo number_format($total_views); ?></strong>
         <span>Total Pageviews</span>
@@ -302,7 +333,7 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
 
     <div class="table-card">
       <div class="table-toolbar">
-        <input type="text" id="logSearch" class="search-input" placeholder="Search by IP, page, or device..." onkeyup="filterLogs()" />
+        <input type="text" id="logSearch" class="search-input" placeholder="Search location, IP, page, or device..." onkeyup="filterLogs()" />
         <form method="POST" onsubmit="return confirm('Are you sure you want to clear all visitor logs?');" style="margin: 0;">
           <button type="submit" name="clear_logs" class="btn-admin btn-danger">🗑️ Clear All Logs</button>
         </form>
@@ -313,9 +344,10 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
           <thead>
             <tr>
               <th>Timestamp (IST)</th>
+              <th>Location Name</th>
               <th>IP Address</th>
-              <th>Location Lookup</th>
               <th>Page Visited</th>
+              <th>Time Spent</th>
               <th>Device</th>
               <th>Referrer</th>
             </tr>
@@ -323,26 +355,38 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
           <tbody>
             <?php if (empty($logs)): ?>
               <tr>
-                <td colspan="6" style="text-align: center; padding: 40px; color: #666;">No visitor logs recorded yet. Browse the website to log your IP!</td>
+                <td colspan="7" style="text-align: center; padding: 40px; color: #666;">No visitor logs recorded yet. Browse the website to log your activity!</td>
               </tr>
             <?php else: ?>
               <?php foreach ($logs as $row): ?>
+                <?php 
+                  $last_act = $row['last_active'] ?? 0;
+                  $is_active = ($now_time - $last_act) <= 15;
+                  $dur_sec = $row['duration'] ?? 0;
+                ?>
                 <tr>
                   <td style="font-family: 'Geist Mono', monospace; white-space: nowrap; color: #888;">
                     <?php echo htmlspecialchars($row['timestamp'] ?? ''); ?>
                   </td>
                   <td>
-                    <span class="ip-badge"><?php echo htmlspecialchars($row['ip'] ?? ''); ?></span>
+                    <span class="location-badge">📍 <?php echo htmlspecialchars($row['location'] ?? 'Unknown Location'); ?></span>
                   </td>
                   <td>
-                    <a href="https://ip-api.com/#<?php echo urlencode($row['ip'] ?? ''); ?>" target="_blank" rel="noopener" style="color: #00b4ff; text-decoration: none; font-size: 12px;">
-                      🔍 Trace IP Info →
-                    </a>
+                    <span class="ip-badge"><?php echo htmlspecialchars($row['ip'] ?? ''); ?></span>
                   </td>
                   <td style="font-weight: 500; color: #fff;">
                     <a href="<?php echo htmlspecialchars($row['page'] ?? '#'); ?>" target="_blank" style="color: #fff; text-decoration: none;">
                       <?php echo htmlspecialchars($row['page'] ?? '/'); ?>
                     </a>
+                  </td>
+                  <td>
+                    <?php if ($is_active): ?>
+                      <span style="color: #22c55e; font-weight: 600; font-family: 'Geist Mono', monospace;">
+                        <span class="active-pulse"></span>Active Now (<?php echo formatDuration($dur_sec); ?>)
+                      </span>
+                    <?php else: ?>
+                      <span class="duration-badge">⏱️ <?php echo formatDuration($dur_sec); ?></span>
+                    <?php endif; ?>
                   </td>
                   <td>
                     <?php 
@@ -351,7 +395,7 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
                     ?>
                     <span class="device-badge <?php echo $class; ?>"><?php echo htmlspecialchars($dev); ?></span>
                   </td>
-                  <td style="color: #888; font-size: 12px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                  <td style="color: #888; font-size: 12px; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                     <?php echo htmlspecialchars($row['referrer'] ?? 'Direct'); ?>
                   </td>
                 </tr>
