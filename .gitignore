@@ -1,4 +1,10 @@
+node_modules/
 config.php
 visitor_logs.json
 ip_cache.json
 client_requests.json
+android/
+www/
+release.keystore
+*.apk
+*.aab
