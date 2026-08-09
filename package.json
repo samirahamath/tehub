@@ -1,0 +1,31 @@
+{
+  "name": "tehub",
+  "version": "1.0.0",
+  "description": "TEHUB Android Application",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo Building static web shell... && exit 0",
+    "cap:sync": "cap sync android",
+    "cap:open": "cap open android"
+  },
+  "keywords": [
+    "capacitor",
+    "android",
+    "tehub"
+  ],
+  "author": "THE EXPERT HUB",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/android": "6.0.0",
+    "@capacitor/app": "6.0.0",
+    "@capacitor/browser": "6.0.0",
+    "@capacitor/cli": "6.0.0",
+    "@capacitor/core": "6.0.0",
+    "@capacitor/keyboard": "6.0.0",
+    "@capacitor/splash-screen": "6.0.0",
+    "@capacitor/status-bar": "6.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5"
+  }
+}

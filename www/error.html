@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Offline — TEHUB</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0A0A0C;
+      color: #F4F4F0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .icon-box {
+      width: 72px;
+      height: 72px;
+      background: rgba(255, 74, 74, 0.1);
+      border: 1px solid rgba(255, 74, 74, 0.3);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 14px;
+      color: #888884;
+      line-height: 1.6;
+      max-width: 320px;
+      margin-bottom: 28px;
+    }
+    .btn-retry {
+      background-color: #D4FF3D;
+      color: #0A0A0C;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(212, 255, 61, 0.2);
+    }
+    .btn-retry:active { opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <div class="icon-box">📡</div>
+  <h1>Connection Interrupted</h1>
+  <p>Unable to connect to TEHUB servers. Please check your internet connection and tap below to retry.</p>
+  <button class="btn-retry" onclick="window.location.href='https://tehub.in/'">Retry Connection →</button>
+</body>
+</html>

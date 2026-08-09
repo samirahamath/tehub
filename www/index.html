@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>TEHUB</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0A0A0C;
+      color: #F4F4F0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .loader-container {
+      text-align: center;
+      padding: 24px;
+    }
+    .logo-mark {
+      width: 64px;
+      height: 64px;
+      border: 3px solid #D4FF3D;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-weight: 900;
+      font-size: 24px;
+      color: #D4FF3D;
+      box-shadow: 0 0 20px rgba(212, 255, 61, 0.2);
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 13px;
+      color: #888884;
+    }
+    .spinner {
+      margin: 24px auto 0;
+      width: 24px;
+      height: 24px;
+      border: 2px solid rgba(212, 255, 61, 0.2);
+      border-top-color: #D4FF3D;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="loader-container">
+    <div class="logo-mark">TEH</div>
+    <h1>THE EXPERT HUB</h1>
+    <p>Connecting to TEHUB Network...</p>
+    <div class="spinner"></div>
+  </div>
+  <script>
+    // Redirect to production HTTPS URL if Capacitor server URL does not handle it automatically
+    window.location.href = "https://tehub.in/";
+  </script>
+</body>
+</html>
