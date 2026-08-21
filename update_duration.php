@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Endpoint to update visitor page stay duration in real time
 ignore_user_abort(true);
 header('Content-Type: application/json');

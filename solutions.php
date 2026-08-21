@@ -338,8 +338,8 @@
             <span>Day Delivery</span>
           </div>
           <div class="solutions-stat">
-            <strong>100%</strong>
-            <span>Customizable</span>
+            <strong>D-U-N-S&reg;</strong>
+            <span>30-704-2520 Verified</span>
           </div>
           <div class="solutions-stat">
             <strong>24/7</strong>

@@ -87,6 +87,17 @@
               We retain project inquiries and related communication records to assist with future engineering collaborations. If you want us to permanently delete your information or project submissions from our systems, simply send a message to <strong>hello@tehub.in</strong> and we will comply within 48 hours.
             </p>
           </div>
+
+          <div>
+            <h3 style="text-transform: uppercase; margin-bottom: var(--space-3); font-family: var(--font-mono); font-size: var(--text-base);">5. Data Controller &amp; Legal Entity</h3>
+            <p>
+              The data controller responsible for your personal data is <strong>THE EXPERT HUB</strong>, an official <strong>Dun &amp; Bradstreet (D&amp;B) Verified Registered Enterprise</strong> (D-U-N-S&reg; Number: 30-704-2520).
+              <br/>
+              <strong>Registered Office:</strong> No. 20, 2nd Floor, Choolaipalam Venkatraman Salai, Chennai, Tamil Nadu 600078, India
+              <br/>
+              <strong>Contact Email:</strong> hello@tehub.in
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Visitor IP Logger for THE EXPERT HUB with Geolocation & Time Tracker
 if (session_status() === PHP_SESSION_NONE) {
     session_start();

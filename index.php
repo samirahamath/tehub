@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/visitor_logger.php'; ?>
+﻿<?php require_once __DIR__ . '/visitor_logger.php'; ?>
 <!doctype html>
 <html lang="en">
 
@@ -699,6 +699,10 @@
           <span class="brand"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</span>
           <p>A premium digital agency engineering custom web applications, mobile apps, software platforms, and
             automations based in Chennai.</p>
+                    <div class="duns-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 255, 61, 0.06); border: 1px solid rgba(212, 255, 61, 0.22); border-radius: 6px; padding: 6px 12px; margin: 12px 0 10px; font-family: var(--font-mono, monospace); font-size: 11px; color: var(--fg, #f4f4f0); letter-spacing: 0.02em;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF3D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <span><strong>D-U-N-S&reg; Registered&trade;</strong> &middot; <span style="color: #D4FF3D; font-weight: 700;">30-704-2520</span></span>
+          </div>
           <span class="label">Studio · 2021-2026 · 2018-2026 </span>
         </div>
         <div>

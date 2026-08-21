@@ -78,11 +78,11 @@
               <a class="btn btn--ghost btn--lg" href="#steps">Explore steps</a>
             </div>
             <div class="hero-meta">
-              <span><strong>End-to-End</strong> · legal &amp; tech launch</span>
-              <span aria-hidden="true">·</span>
-              <span><strong>₹3,000</strong> · starting budget</span>
-              <span aria-hidden="true">·</span>
-              <span><strong>Permanent</strong> · support desk</span>
+              <span><strong>D-U-N-S&reg; 30-704-2520</strong> &middot; Verified Company</span>
+              <span aria-hidden="true">&middot;</span>
+              <span><strong>End-to-End</strong> &middot; legal &amp; tech launch</span>
+              <span aria-hidden="true">&middot;</span>
+              <span><strong>&#8377;3,000</strong> &middot; starting budget</span>
             </div>
           </div>
           <div class="hero-media">

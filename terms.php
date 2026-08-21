@@ -63,9 +63,11 @@
           <div>
             <h3 style="text-transform: uppercase; margin-bottom: var(--space-3); font-family: var(--font-mono); font-size: var(--text-base);">1. Ownership &amp; Impressum</h3>
             <p>
-              This website is operated by <strong>THE EXPERT HUB</strong>, a software engineering agency based in India.
+              This website is operated by <strong>THE EXPERT HUB</strong>, an official <strong>Dun &amp; Bradstreet (D&amp;B) Verified Registered Enterprise</strong>.
               <br/>
-              <strong>Office Address:</strong> NS Complex, 2nd Floor, No 20 choolaipallam, MGR Nagar, Chennai 600078
+              <strong>D-U-N-S&reg; Number:</strong> 30-704-2520
+              <br/>
+              <strong>Registered Office:</strong> No. 20, 2nd Floor, Choolaipalam Venkatraman Salai, Chennai, Tamil Nadu 600078, India
               <br/>
               <strong>Contact Email:</strong> hello@tehub.in
             </p>

@@ -429,6 +429,11 @@
   // 2. Chatbot Database
   const faqData = [
     {
+      keywords: ['duns', 'd-u-n-s', 'registered', 'registration', 'verification', 'company', 'legal', 'cin', 'gst'],
+      question: "Are you a registered company?",
+      answer: "Yes! <strong>THE EXPERT HUB</strong> is an official <strong>Dun & Bradstreet (D&B) Verified Registered Enterprise</strong> with D-U-N-S® Number: <strong style='color: var(--lime);'>30-704-2520</strong>.<br><br>📍 <strong>Registered Office:</strong><br>No. 20, 2nd Floor, Choolaipalam Venkatraman Salai, Chennai, Tamil Nadu 600078, India."
+    },
+    {
       keywords: ['d-r', 'dream to real', 'startup', 'launchpad', 'incubation', 'business'],
       question: "What is D-R Launchpad?",
       answer: "Dream to Real (D-R) is our comprehensive startup incubation launchpad. We guide new business owners from concept to cashflow, covering location analysis, company registration/partnership docs, low-cost website design (from ₹3,000), digital marketing (from ₹3,000/mo), and permanent support."
@@ -441,12 +446,12 @@
     {
       keywords: ['software', 'products', 'ready', 'systems', 'sms', 'ivr', 'whatsapp', 'school'],
       question: "What ready software do you sell?",
-      answer: "We offer several ready-to-deploy platforms:\n• School Management System (complete ERP)\n• IVR Auto-Calling System\n• Bulk WhatsApp/Telegram SMS Solution\nAll platforms are fully customizable to your brand. Details on our Sales page!"
+      answer: "We offer several ready-to-deploy platforms:\n• School Management System (complete ERP)\n• IVR Auto-Calling System\n• Bulk WhatsApp/Telegram SMS Solution\nAll platforms are fully customizable to your brand. Details on our Solutions page!"
     },
     {
       keywords: ['location', 'where', 'address', 'office', 'hyderabad', 'chennai', 'india'],
       question: "Where are you located?",
-      answer: "THE EXPERT HUB is based in Chennai, India. We collaborate with clients globally. You can request a video call or meeting via our contact form."
+      answer: "THE EXPERT HUB is located at No. 20, 2nd Floor, Choolaipalam Venkatraman Salai, Chennai, Tamil Nadu 600078, India (D-U-N-S® 30-704-2520 Verified). We collaborate with clients globally. You can request a video call or meeting via our contact form."
     },
     {
       keywords: ['contact', 'email', 'start', 'hire', 'phone', 'reach', 'interested', 'call'],

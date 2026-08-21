@@ -82,11 +82,11 @@
               <a class="btn btn--ghost btn--lg" href="#channels">Other ways to reach us</a>
             </div>
             <div class="hero-meta">
-              <span><strong>48hr</strong> · target reply</span>
-              <span aria-hidden="true">·</span>
-              <span><strong>2</strong> · product managers reading</span>
-              <span aria-hidden="true">·</span>
-              <span><strong>8yr</strong> · in business</span>
+              <span><strong>D-U-N-S&reg; 30-704-2520</strong> &middot; Verified Entity</span>
+              <span aria-hidden="true">&middot;</span>
+              <span><strong>48hr</strong> &middot; target reply</span>
+              <span aria-hidden="true">&middot;</span>
+              <span><strong>8yr</strong> &middot; in business</span>
             </div>
           </div>
           <div class="hero-media">
@@ -281,15 +281,17 @@
       <div class="container container--wide">
         <div class="split">
           <div class="split-text">
-            <span class="eyebrow eyebrow--on-tile"><span class="dot" aria-hidden="true"></span>Our office</span>
+            <span class="eyebrow eyebrow--on-tile"><span class="dot" aria-hidden="true"></span>Registered Office &amp; Verification</span>
             <h2>Visit our office by booking.</h2>
             <p>
-              Our Chennai office is an active coding workshop. We are not open to the general public, but we welcome clients, partners, and developers for scheduled sessions and deep-dive technical reviews. Write to <strong>hello@tehub.in</strong> to coordinate a visit.
+              Our Chennai office is an active coding workshop. We are an official <strong>Dun &amp; Bradstreet (D&amp;B) Verified Registered Company</strong>. We welcome enterprise clients, startup founders, and developers for scheduled sessions and deep-dive technical reviews. Write to <strong>hello@tehub.in</strong> to coordinate a visit.
             </p>
             <ul class="split-fact-list">
-              <li><b>Chennai Office</b><span>NS Complex, 2nd Floor, No 20 choolaipallam, MGR Nagar, Chennai 600078</span></li>
-              <li><b>Office hours</b><span>Mon–Fri 0900–1800 IST</span></li>
-              <li><b>Closed</b><span>National holidays</span></li>
+              <li><b>Entity Name</b><span>THE EXPERT HUB</span></li>
+              <li><b>D-U-N-S&reg; No.</b><span style="color: var(--lime); font-weight: 700; font-family: var(--font-mono);">30-704-2520 (Dun &amp; Bradstreet Verified)</span></li>
+              <li><b>Registered Office</b><span>No. 20, 2nd Floor, Choolaipalam Venkatraman Salai, Chennai, Tamil Nadu 600078, India</span></li>
+              <li><b>Office hours</b><span>Mon–Fri 09:00–18:00 IST · By prior appointment</span></li>
+              <li><b>Support Email</b><span>hello@tehub.in</span></li>
             </ul>
             <a class="btn btn--ghost-on-tile btn--lg" href="#intake">Send a first note
               <svg class="arrow" width="16" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
