@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 require_once __DIR__ . '/../../config.php';
+date_default_timezone_set('Asia/Kolkata');
 
 $raw = file_get_contents('php://input');
 $input = json_decode($raw, true) ?? $_POST;

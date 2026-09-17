@@ -19,7 +19,25 @@ if (file_exists($payments_file)) {
 $amount = floatval($payment['amount'] ?? 0);
 $amount_fmt = number_format($amount, 2);
 $invoice_no = $payment['invoice_number'] ?? ($payment_id ?? 'INV-' . strtoupper(substr(uniqid(), -6)));
-$paid_date = !empty($payment['paid_at']) ? date('d M Y, h:i A', strtotime($payment['paid_at'])) : date('d M Y, h:i A');
+
+date_default_timezone_set('Asia/Kolkata');
+$paid_raw = $payment['paid_at'] ?? $payment['created_at'] ?? '';
+if (!empty($paid_raw)) {
+    // If the stored time was in UTC (e.g. earlier records before timezone config), convert to IST
+    $parsed_time = strtotime($paid_raw);
+    // If date string contains no timezone info and was recorded under UTC
+    if (strpos($paid_raw, '+') === false && strpos($paid_raw, 'IST') === false && strpos($paid_raw, 'GMT') === false) {
+        $dt = new DateTime($paid_raw, new DateTimeZone('UTC'));
+        $dt->setTimezone(new DateTimeZone('Asia/Kolkata'));
+        $paid_date = $dt->format('d M Y, h:i A') . ' (GMT +05:30)';
+    } else {
+        $dt = new DateTime($paid_raw);
+        $dt->setTimezone(new DateTimeZone('Asia/Kolkata'));
+        $paid_date = $dt->format('d M Y, h:i A') . ' (GMT +05:30)';
+    }
+} else {
+    $paid_date = date('d M Y, h:i A') . ' (GMT +05:30)';
+}
 $rzp_id = $payment['razorpay_payment_id'] ?? 'VERIFIED_VIA_RAZORPAY';
 ?>
 <!doctype html>
