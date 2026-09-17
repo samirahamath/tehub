@@ -1,0 +1,21 @@
+RewriteEngine On
+RewriteBase /
+
+# 1. API Payment Endpoints
+RewriteRule ^api/payment/create/?$ api/payment/create.php [L,QSA]
+RewriteRule ^api/payment/create-order/?$ api/payment/create_order.php [L,QSA]
+RewriteRule ^api/payment/verify/?$ api/payment/verify.php [L,QSA]
+RewriteRule ^api/payment/webhook/?$ api/payment/webhook.php [L,QSA]
+
+# 2. Payment Web Pages
+RewriteRule ^pay/success/?$ pay_success.php [L,QSA]
+RewriteRule ^pay/failed/?$ pay_failed.php [L,QSA]
+RewriteRule ^pay/admin/?$ pay_admin.php [L,QSA]
+RewriteRule ^pay/([A-Za-z0-9_-]+)/?$ pay.php?id=$1 [L,QSA]
+RewriteRule ^pay/?$ pay.php [L,QSA]
+
+# 3. Clean Extensionless URLs for Main Site
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^\.]+)$ $1.php [L,QSA]

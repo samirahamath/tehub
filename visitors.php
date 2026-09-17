@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 date_default_timezone_set('Asia/Kolkata');
 
@@ -390,7 +390,8 @@ if ($is_logged_in && isset($_GET['action']) && $_GET['action'] === 'export_csv')
         <h1>⚡ THE EXPERT HUB — Admin Master Control</h1>
         <p>Manage client inquiries, project briefs, visitor IPs, location &amp; live session metrics</p>
       </div>
-      <div style="display: flex; gap: 10px;">
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a href="pay_admin.php" class="btn-admin" style="background: rgba(212, 255, 61, 0.15); border: 1px solid #d4ff3d; color: #d4ff3d;">💳 Payment Hub</a>
         <a href="visitors?action=export_requests_csv" class="btn-admin">📥 Export Client Inquiries</a>
         <a href="visitors?action=logout" class="btn-admin" style="background: rgba(255,255,255,0.1); color: #fff;">Logout</a>
       </div>
