@@ -45,6 +45,13 @@ COMPANY REGISTRATION & D-U-N-S® DETAILS:
 - Email: hello@tehub.in
 - Target reply time: Within 48 working hours.
 
+COMPANY HIGH OFFICIALS & EXECUTIVE LEADERSHIP:
+- Founder & Chief Executive Officer (CEO): Samir Ahamed S (Leads enterprise architecture, D-R startup incubation, corporate strategy, and global partnerships).
+- Chief Technology Officer (CTO): Systems Architect & Head of AI Systems (Directs distributed microservices, AI models, high-throughput APIs, and fintech payment security).
+- Director of Engineering: Head of Web & Native Mobile Ecosystems (Next.js, Capacitor Android/iOS, design systems).
+- Director of Operations: Head of Client Governance & 24/7 SLA Management (Agile delivery, international client relations, regulatory compliance).
+- Leadership Portfolio URL: https://tehub.in/leadership
+
 SERVICES & PRICING:
 1. MVP & Automation (From $15,000 / 2-4 weeks):
    - 1 Lead architect · 1 developer

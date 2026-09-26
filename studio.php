@@ -1,13 +1,13 @@
-﻿<?php require_once __DIR__ . '/visitor_logger.php'; ?>
+<?php require_once __DIR__ . '/visitor_logger.php'; ?>
 <!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TEHUB · The Agency — Premium Development Agency</title>
+  <title>THE EXPERT HUB · The Studio &amp; Executive Leadership</title>
   <meta name="description"
-    content="The TEHUB agency — founded in 2018, working out of New York and Berlin, eight people on staff, full-stack developers, QA lead, DevOps architect. About, team, principles, stats." />
+    content="THE EXPERT HUB studio — official Dun &amp; Bradstreet (D-U-N-S&reg; 30-704-2520) registered enterprise based in Chennai, India. Executive leadership, architecture principles, and delivery standards." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
@@ -28,6 +28,8 @@
           <a href="d-r.php">D-R</a>
           <a href="services.php">Services</a>
           <a href="solutions.php">Solutions</a>
+          <a href="studio.php" style="color: var(--lime);">Studio</a>
+          <a href="leadership.php">Leadership</a>
           <a href="contact.php">Contact</a>
         </div>
         <div class="nav-cta-row">
@@ -50,81 +52,88 @@
     <a href="d-r.php">D-R</a>
     <a href="services.php">Services</a>
     <a href="solutions.php">Solutions</a>
+    <a href="studio.php">Studio</a>
+    <a href="leadership.php">Leadership</a>
     <a href="contact.php">Contact</a>
   </div>
 
   <main id="main">
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero hero--sub">
       <div class="container container--wide">
         <div class="hero-grid">
           <div class="hero-text">
-            <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Agency · est. October 2018</span>
+            <span class="eyebrow"><span class="dot" aria-hidden="true"></span>The Studio · D-U-N-S® 30-704-2520 Verified</span>
             <h1 class="hero-headline">
-              Eight people,<br />
-              two hubs,<br />
-              <span class="lime">one rule</span> we keep.
+              Engineering<br />
+              without the<br />
+              <span class="lime">agency bloat.</span>
             </h1>
             <p class="hero-sub">
-              TEHUB is a boutique software engineering agency — eight people on staff, two offices (Brooklyn and Berlin),
-              and one core belief: write clean, testable, self-documenting code. We work in dedicated sprints to ensure we never compromise on quality, keeping the same technical lead on an account from start to finish.
+              THE EXPERT HUB was founded with a singular objective: deliver enterprise-grade digital systems and startup incubation without the inflated overhead, account-manager telephone games, or junior subcontractor hand-offs.
             </p>
-            <div class="hero-cta-row">
-              <a class="btn btn--primary btn--lg" href="#team">Meet the team</a>
-              <a class="btn btn--ghost btn--lg" href="contact.php">Start a project</a>
-            </div>
-            <div class="hero-meta">
-              <span><strong>2018</strong> · founded in Brooklyn</span>
-              <span aria-hidden="true">·</span>
-              <span><strong>2020</strong> · Berlin hub opened</span>
-              <span aria-hidden="true">·</span>
-              <span><strong>2023</strong> · open source releases</span>
-            </div>
           </div>
-          <div class="hero-media">
+          <div class="hero-media reveal">
             <img src="assets/img/studio-hero.svg"
-              alt="A clean collaborative developer workspace with whiteboards, displays, and servers." />
+              alt="High-performance server telemetry metrics, API endpoints, and clean terminal monitoring." />
             <div class="floating-tag ft-top">
-              <span class="pill">8 Team</span>
-              CO-WORKING · LABS
+              <span>Verified Entity</span>
+              <strong>D-U-N-S® 30-704-2520</strong>
             </div>
             <div class="floating-tag ft-bottom">
-              TypeScript · Go · Python · DevOps
+              <span>Operating Base</span>
+              <strong>Chennai · Global Delivery</strong>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Founding chapter -->
-    <section class="chapter">
-      <div class="container container--narrow">
-        <div class="chapter-grid">
-          <div>
-            <span class="label">Chapter 01 · founding</span>
-            <h2>2018 — a developer<br />collective of three<br />in a borrowed loft.</h2>
+    <!-- Narrative intro -->
+    <section class="tight">
+      <div class="container container--wide">
+        <div class="quote-block">
+          <p class="quote-text">
+            "A codebase is only as good as the engineers holding direct responsibility for it. When you partner with us, you work directly with principal architects and company officials."
+          </p>
+          <div class="quote-cite">
+            <strong>Samir Ahamed S</strong>
+            <span>Founder &amp; Chief Executive Officer · THE EXPERT HUB</span>
           </div>
-          <div class="chapter-body">
+        </div>
+      </div>
+    </section>
+
+    <!-- Split: narrative -->
+    <section class="snug">
+      <div class="container container--wide">
+        <div class="split">
+          <div class="split-text">
+            <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Background &middot; Since 2018</span>
+            <h2>Six years of building<br />for longevity.</h2>
             <p>
-              TEHUB started in October 2018 as a developer collective of three — Mira Halden, Joon Park, and Tomas Vance — sharing a small loft in Brooklyn that we borrowed for the autumn. We took on twelve custom software integration projects that first quarter and lost money on five of them due to scope estimation issues. We kept going because our custom integrations worked flawlessly where off-the-shelf tools crashed.
+              We began as a focused engineering collective delivering mission-critical web applications, SaaS dashboards, and automated microservices. Over six years, we have scaled our delivery to over 140+ production systems.
             </p>
-            <blockquote class="pull-quote">
-              The first rule we ever wrote down: never ship code we would not sign off on.
-              <cite>— Mira Halden, Founder &amp; Chief Architect</cite>
-            </blockquote>
             <p>
-              The name "TEHUB" stands for Technology Hub. Our philosophy — careful database indexing, modular code, and an automation-first workflow — represents our commitment to modern software craftsmanship. We believe software should be built to run for years without requiring emergency maintenance.
+              Our agency is privately held and verified by <strong>Dun &amp; Bradstreet (D&amp;B D-U-N-S&reg; 30-704-2520)</strong>. We maintain rigorous standards across all client engagements.
+            </p>
+          </div>
+          <div class="split-text">
+            <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Philosophy</span>
+            <h2>Small squads.<br />Principal leads.</h2>
+            <p>
+              Every client project is led by a dedicated technical principal. We enforce automated testing, zero-bloat architecture, and strict security compliance across every repository we touch.
             </p>
             <p>
-              Our agency is privately held; we have never taken outside venture capital, never sold a percentage to an advertising conglomerate, and we expect to remain owner-operated. We are eight engineers and product managers. We intend to stay small to maintain quality.
+              From custom SaaS platforms and mobile applications to our <strong>Dream to Real (D-R) Startup Incubation Launchpad</strong>, we turn complex challenges into high-yielding digital assets.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Awards strip -->
+    <!-- Awards / Stats strip -->
     <section class="compact">
       <div class="container container--wide">
         <div class="awards-strip">
@@ -137,8 +146,8 @@
             <div class="award-label">Uptime guarantee met</div>
           </div>
           <div class="award-cell">
-            <div class="award-num">12+</div>
-            <div class="award-label">Open source modules</div>
+            <div class="award-num">30-704-2520</div>
+            <div class="award-label">D-U-N-S® Verified Registry</div>
           </div>
           <div class="award-cell">
             <div class="award-num">94%</div>
@@ -148,7 +157,7 @@
       </div>
     </section>
 
-    <!-- Principles (cap-bento reuse) -->
+    <!-- Principles -->
     <section>
       <div class="container container--wide">
         <div class="section-head">
@@ -157,7 +166,7 @@
             <h2>Six rules we<br />refuse to bend.</h2>
           </div>
           <p class="lede">
-            These are not aspirations — they are the architectural constraints that shape every codebase we deliver. We wrote these rules down in 2019 and enforce them on every project repository.
+            These are not aspirations — they are the architectural constraints that shape every codebase we deliver. We enforce them on every project repository.
           </p>
         </div>
 
@@ -201,24 +210,24 @@
       </div>
     </section>
 
-    <!-- Split: rooms -->
+    <!-- Split: Chennai Corporate HQ -->
     <section class="snug">
       <div class="container container--wide">
         <div class="split">
           <div class="split-text">
-            <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Hub 01 · New York</span>
-            <h2>Pair-programming<br />and client strategy.</h2>
+            <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Corporate HQ · Chennai, India</span>
+            <h2>Engineering Hub<br />&amp; Innovation Labs.</h2>
             <p>
-              Our New York hub is located in Brooklyn, a five-minute walk from the G train. High ceilings, dedicated developer pairing desks, test servers, and meeting spaces. We hold client strategy meetings here and run frontend design workshops.
+              THE EXPERT HUB corporate headquarters is situated in Chennai, India. A high-density engineering center driving full-stack application development, mobile platforms, enterprise cloud architectures, and startup incubation.
             </p>
             <ul class="split-fact-list">
-              <li><b>Address</b><span>137 Banker Street, Brooklyn NY 11222</span></li>
-              <li><b>Hours</b><span>Mon–Fri 0900–1800 EST · weekends closed</span></li>
-              <li><b>Capacity</b><span>Up to 12 team members &amp; clients</span></li>
-              <li><b>Focus</b><span>Frontend architecture, mobile apps, product strategy</span></li>
-              <li><b>Stack</b><span>Next.js, React Native, Vercel, Tailwind CSS</span></li>
+              <li><b>Address</b><span>No. 20, 2nd Floor, Choolaipalam Venkatraman Salai, Chennai 600078</span></li>
+              <li><b>Registry</b><span style="color: var(--lime); font-family: var(--font-mono);">D-U-N-S® 30-704-2520 Verified Enterprise</span></li>
+              <li><b>Hours</b><span>Mon–Fri 09:00–19:00 IST · 24/7 Monitoring Desk</span></li>
+              <li><b>Focus</b><span>Next.js, Capacitor Native Mobile, AI Models, Distributed APIs</span></li>
+              <li><b>Delivery</b><span>Serving enterprise clients across India, UAE, US &amp; Europe</span></li>
             </ul>
-            <a class="btn btn--ghost" href="contact.php">Book a visit
+            <a class="btn btn--ghost" href="contact.php">Book HQ visit / Meeting
               <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
                 <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                   stroke-linejoin="round" />
@@ -226,116 +235,63 @@
             </a>
           </div>
           <div class="split-img">
-            <img src="assets/img/studio-brooklyn.svg"
-              alt="A developer pairing workstation with multiple monitors, keyboards, and server metrics." />
-            <span class="ft-corner">Greenpoint · NYC</span>
+            <img src="assets/img/studio-room.svg"
+              alt="THE EXPERT HUB Chennai engineering lab workstation and cloud deployment metrics." />
+            <span class="ft-corner">Chennai · HQ</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Split: berlin -->
-    <section class="snug" style="padding-top: 0;">
-      <div class="container container--wide">
-        <div class="split split--reverse">
-          <div class="split-text">
-            <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Hub 02 · Berlin</span>
-            <h2>Core backend<br />and cloud DevOps.</h2>
-            <p>
-              The Berlin hub opened in 2020 — located in Mitte, focusing on database optimization, backend microservices, DevOps pipelines, and API automations. A quiet space designed for deep focusing on algorithmic engineering and systems scaling.
-            </p>
-            <ul class="split-fact-list">
-              <li><b>Address</b><span>Brunnenstraße 162, 10119 Berlin</span></li>
-              <li><b>Hours</b><span>Mon–Fri 0900–1800 CET · evenings closed</span></li>
-              <li><b>Capacity</b><span>Up to 8 engineers on site</span></li>
-              <li><b>Focus</b><span>NestJS, Go, Python APIs, AWS cloud architecture, CI/CD</span></li>
-              <li><b>Ops Tech</b><span>Docker, Kubernetes, GitHub Actions, Terraform</span></li>
-            </ul>
-            <a class="btn btn--ghost" href="contact.php">Book a visit
-              <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
-                <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
-          </div>
-          <div class="split-img">
-            <img src="assets/img/studio-berlin.svg"
-              alt="The Berlin hub room — exposed concrete, clean desks, and servers running microservices." />
-            <span class="ft-corner">Mitte · Berlin</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Team -->
+    <!-- Company High Officials & Leadership Section -->
     <section id="team">
       <div class="container container--wide">
         <div class="section-head">
           <div>
-            <span class="eyebrow"><span class="dot" aria-hidden="true"></span>The team</span>
-            <h2>Eight people.<br />You will work<br />with two.</h2>
+            <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Company Officials</span>
+            <h2>Executive Leadership<br />&amp; High Officials.</h2>
           </div>
           <p class="lede">
-            The product manager and the lead engineer assigned to your repository are the two primary contacts you will communicate with in Slack and Jira. The QA engineer and backend dev remain focused on code quality behind the scenes.
+            Our company high officials maintain direct oversight over technical architectures, code quality, and delivery governance. You work directly with senior leadership.
           </p>
         </div>
 
-        <div class="team-grid">
-          <div class="team-card">
-            <div class="t-img"><img src="assets/img/team-mira.svg"
-                alt="Studio portrait of Mira Halden, Founder &amp; Chief Architect of TEHUB." /></div>
-            <h3>Mira Halden</h3>
-            <div class="t-role">Founder · Chief Architect</div>
+        <div class="team-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+          <div class="team-card" style="border-color: rgba(212, 255, 61, 0.3);">
+            <div class="t-img"><img src="assets/img/team-samir.svg"
+                alt="Samir Ahamed S — Founder &amp; CEO of THE EXPERT HUB." /></div>
+            <h3>Samir Ahamed S</h3>
+            <div class="t-role" style="color: var(--lime); font-weight: 700;">Founder · Chief Executive Officer</div>
+            <p style="font-size: 12px; color: var(--fg-soft); margin-top: 6px;">Enterprise Architecture · D-R Incubation · Strategy</p>
           </div>
           <div class="team-card">
-            <div class="t-img"><img src="assets/img/team-joon.svg"
-                alt="Studio portrait of Joon Park, Partner and Full-Stack Lead." />
+            <div class="t-img"><img src="assets/img/team-cto.svg"
+                alt="Chief Technology Officer of THE EXPERT HUB." />
             </div>
-            <h3>Joon Park</h3>
-            <div class="t-role">Partner · Full-Stack Lead</div>
+            <h3>Chief Technology Officer</h3>
+            <div class="t-role" style="color: #64B5F6;">CTO · Systems Architect</div>
+            <p style="font-size: 12px; color: var(--fg-soft); margin-top: 6px;">AI Models · Distributed Backends · Security</p>
           </div>
           <div class="team-card">
-            <div class="t-img"><img src="assets/img/team-tomas.svg"
-                alt="Studio portrait of Tomas Vance, Partner and DevOps Director." />
+            <div class="t-img"><img src="assets/img/team-engineering.svg"
+                alt="Director of Engineering of THE EXPERT HUB." />
             </div>
-            <h3>Tomas Vance</h3>
-            <div class="t-role">Partner · DevOps Director</div>
+            <h3>Director of Engineering</h3>
+            <div class="t-role" style="color: #A855F7;">Lead · Web &amp; Mobile Ecosystems</div>
+            <p style="font-size: 12px; color: var(--fg-soft); margin-top: 6px;">Next.js · Capacitor Mobile · Sub-Second UI</p>
           </div>
           <div class="team-card">
-            <div class="t-img"><img src="assets/img/team-anya.svg"
-                alt="Studio portrait of Anya Stenmark, Senior Product Manager." />
+            <div class="t-img"><img src="assets/img/team-ops.svg"
+                alt="Director of Operations of THE EXPERT HUB." />
             </div>
-            <h3>Anya Stenmark</h3>
-            <div class="t-role">Senior Product Manager · NYC</div>
+            <h3>Director of Operations</h3>
+            <div class="t-role" style="color: #22C55E;">Director · Client Governance</div>
+            <p style="font-size: 12px; color: var(--fg-soft); margin-top: 6px;">24/7 SLA · Agile Delivery · Partnerships</p>
           </div>
-          <div class="team-card">
-            <div class="t-img"><img src="assets/img/team-eli.svg"
-                alt="Studio portrait of Eli Wender, Product Manager." />
-            </div>
-            <h3>Eli Wender</h3>
-            <div class="t-role">Product Manager · Berlin</div>
-          </div>
-          <div class="team-card">
-            <div class="t-img"><img src="assets/img/team-rosa.svg"
-                alt="Studio portrait of Rosa Linder, Senior Backend Engineer." />
-            </div>
-            <h3>Rosa Linder</h3>
-            <div class="t-role">Senior Backend Engineer</div>
-          </div>
-          <div class="team-card">
-            <div class="t-img"><img src="assets/img/team-felix.svg"
-                alt="Studio portrait of Felix Vahl, QA Lead." />
-            </div>
-            <h3>Felix Vahl</h3>
-            <div class="t-role">QA Lead</div>
-          </div>
-          <div class="team-card">
-            <div class="t-img"><img src="assets/img/team-iris.svg"
-                alt="Studio portrait of Iris Tornsen, Frontend Developer." />
-            </div>
-            <h3>Iris Tornsen</h3>
-            <div class="t-role">Frontend Developer</div>
-          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 36px;">
+          <a href="leadership.php" class="btn btn--primary btn--md">View Full Leadership Portfolio &amp; Profiles →</a>
         </div>
       </div>
     </section>
@@ -343,10 +299,10 @@
     <!-- Closing -->
     <section class="closing-cta">
       <div class="container container--narrow">
-        <span class="label" style="color: rgba(10,10,12,0.6);">Hiring · 2026</span>
-        <h2>Looking for an agency,<br />or a career at one?</h2>
+        <span class="label" style="color: rgba(10,10,12,0.6);">Partnership · 2026</span>
+        <h2>Looking for a verified engineering partner?</h2>
         <p class="lede">
-          We are currently hiring a junior developer based in Berlin and a freelance cloud engineer for the New York squad. Project enquiries receive replies in 48 hours; job inquiries inside 7 days.
+          Project enquiries receive replies within 48 working hours directly from our leadership team.
         </p>
         <div class="cta-row">
           <a class="btn btn--dark btn--lg" href="contact.php">Start a project
@@ -355,7 +311,7 @@
                 stroke-linejoin="round" />
             </svg>
           </a>
-          <a class="btn btn--ghost btn--lg" href="contact.php#careers">See open roles</a>
+          <a class="btn btn--ghost btn--lg" href="leadership.php">Executive Team</a>
         </div>
       </div>
     </section>
@@ -366,50 +322,45 @@
     <div class="container container--wide">
       <div class="footer-top">
         <div class="footer-brand">
-          <span class="brand"><span class="brand-mark" aria-hidden="true"></span> TEHUB</span>
-          <p>A premium digital agency engineering custom web applications, mobile apps, software platforms, and automations between New York and Berlin.</p>
-                    <div class="duns-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 255, 61, 0.06); border: 1px solid rgba(212, 255, 61, 0.22); border-radius: 6px; padding: 6px 12px; margin: 12px 0 10px; font-family: var(--font-mono, monospace); font-size: 11px; color: var(--fg, #f4f4f0); letter-spacing: 0.02em;">
+          <span class="brand"><span class="brand-mark" aria-hidden="true"></span> THE EXPERT HUB</span>
+          <p>A premium digital agency engineering custom web applications, mobile apps, software platforms, and automations based in Chennai.</p>
+          <div class="duns-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 255, 61, 0.06); border: 1px solid rgba(212, 255, 61, 0.22); border-radius: 6px; padding: 6px 12px; margin: 12px 0 10px; font-family: var(--font-mono, monospace); font-size: 11px; color: var(--fg, #f4f4f0); letter-spacing: 0.02em;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF3D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-            <span><strong>D-U-N-S&reg; Registered&trade;</strong> &middot; <span style="color: #D4FF3D; font-weight: 700;">30-704-2520</span></span>
+            <span><strong>D-U-N-S® Registered™</strong> &middot; <span style="color: #D4FF3D; font-weight: 700;">30-704-2520</span></span>
           </div>
-          <span class="label">Studio · 0900–1800 EST · 0900–1900 CET</span>
+          <span class="label">Studio · 2018-2026</span>
         </div>
         <div>
-          <h4>Agency</h4>
+          <h4>Platform</h4>
           <ul>
-            <li><a href="studio.php">About</a></li>
-            <li><a href="studio.php#team">Team</a></li>
+            <li><a href="index.php">Index</a></li>
+            <li><a href="d-r.php">D-R Startup</a></li>
             <li><a href="services.php">Services</a></li>
-            <li><a href="services.php#rates">Rates</a></li>
+            <li><a href="solutions.php">Solutions</a></li>
+            <li><a href="leadership.php">Leadership</a></li>
           </ul>
         </div>
         <div>
-          <h4>Work</h4>
+          <h4>Work &amp; Solutions</h4>
           <ul>
             <li><a href="work.php">Selected work</a></li>
-            <li><a href="work.php#archive">Archive</a></li>
-            <li><a href="work.php#webdev">Web Dev</a></li>
-            <li><a href="work.php#appdev">App Dev</a></li>
+            <li><a href="web-development.php">Web Dev</a></li>
+            <li><a href="app-development.php">Mobile Apps</a></li>
+            <li><a href="crm-dashboard.php">CRM Dashboards</a></li>
           </ul>
         </div>
         <div>
-          <h4>Connect</h4>
+          <h4>Connect &amp; Legal</h4>
           <ul>
-            <li><a href="contact.php">Start a project</a></li>
-            <li><a href="https://www.linkedin.com/company/142877064/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://www.facebook.com/share/1HXUyXrCCS/" target="_blank" rel="noopener">Facebook</a></li>
-            <li><a href="https://www.instagram.com/the_expert.hub_?igsh=MjBnNGQ2d3BkMmFp" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="contact.php">Contact &amp; HQ</a></li>
+            <li><a href="pay.php">Invoice Portal</a></li>
+            <li><a href="privacy.php">Privacy Policy</a></li>
+            <li><a href="terms.php">Terms of Service</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 TEHUB · Engineered for performance. Distributed by <a href="https://tehub.in/"
-            target="_blank">The Expert Hub</a></span>
-        <div class="footer-meta-links">
-          <a href="#">Privacy</a>
-          <a href="#">Imprint</a>
-          <a href="#">Sitemap</a>
-        </div>
+        <span>© 2026 THE EXPERT HUB · D-U-N-S® 30-704-2520 · Engineered for performance.</span>
       </div>
     </div>
   </footer>
@@ -417,5 +368,4 @@
   <script src="assets/js/site.js" defer></script>
   <script src="assets/js/chatbot.js" defer></script>
 </body>
-
 </html>

@@ -429,6 +429,11 @@
   // 2. Chatbot Database
   const faqData = [
     {
+      keywords: ['leadership', 'official', 'officials', 'ceo', 'founder', 'director', 'samir', 'board', 'team', 'management', 'portfolio'],
+      question: "Who are the company high officials and leadership?",
+      answer: "THE EXPERT HUB is led by:<br>• <strong>Samir Ahamed S</strong> — Founder & Chief Executive Officer (CEO)<br>• <strong>Chief Technology Officer (CTO)</strong> — Systems Architect & Head of AI<br>• <strong>Director of Engineering</strong> — Full-Stack & Mobile Ecosystems<br>• <strong>Director of Operations</strong> — Client Governance & 24/7 SLA Management<br><br>Explore the full portfolio at our <a href='leadership.php' style='color: var(--lime); text-decoration: underline;'>Leadership Portfolio page</a>."
+    },
+    {
       keywords: ['duns', 'd-u-n-s', 'registered', 'registration', 'verification', 'company', 'legal', 'cin', 'gst'],
       question: "Are you a registered company?",
       answer: "Yes! <strong>THE EXPERT HUB</strong> is an official <strong>Dun & Bradstreet (D&B) Verified Registered Enterprise</strong> with D-U-N-S® Number: <strong style='color: var(--lime);'>30-704-2520</strong>.<br><br>📍 <strong>Registered Office:</strong><br>No. 20, 2nd Floor, Choolaipalam Venkatraman Salai, Chennai, Tamil Nadu 600078, India."

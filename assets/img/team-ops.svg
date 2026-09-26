@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-ops" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181D"/>
+      <stop offset="100%" stop-color="#0E0E12"/>
+    </linearGradient>
+    <radialGradient id="glow-ops" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(34,197,94,0.18)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" rx="24" fill="url(#grad-ops)" stroke="rgba(34,197,94,0.35)" stroke-width="2"/>
+  <circle cx="200" cy="180" r="120" fill="url(#glow-ops)"/>
+  <circle cx="200" cy="180" r="95" fill="none" stroke="#22C55E" stroke-dasharray="6,8" stroke-width="2"/>
+  <circle cx="200" cy="180" r="85" fill="#121216" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  <text x="200" y="195" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="44" font-weight="700" fill="#22C55E" letter-spacing="2">[OPS]</text>
+  <rect x="90" y="300" width="220" height="28" rx="6" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.4)" stroke-width="1"/>
+  <text x="200" y="318" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11" font-weight="700" fill="#22C55E" letter-spacing="1.5">OPERATIONS DIRECTOR</text>
+  <text x="200" y="352" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="14" font-weight="600" fill="#F4F4F0" letter-spacing="1">CLIENT SUCCESS &amp; SLA</text>
+</svg>
